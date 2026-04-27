@@ -1,0 +1,37 @@
+@font-face {
+    font-family : kenvector_future;
+    src: url(/image/kenney_space-shooter-remastered/Bonus/kenvector_future.ttf);
+}
+
+@font-face {
+    font-family : kenvector_future_thin;
+    src: url(/image/kenney_space-shooter-remastered/Bonus/kenvector_future_thin.ttf);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-family: kenvector_future_thin;
+}
+
+#scenneDuJeu{
+    /* position: relative; */
+    width: 80%;
+    aspect-ratio: 9/16;
+    border: solid;
+    border-radius: 12px;
+    background-color: rgb(239, 239, 239);
+}
+#scenneDuJeu:hover{
+    cursor: none;
+}
+
+#joueur{
+    position: absolute;
+    width: 10%;
+}
