@@ -1,40 +1,42 @@
 const scene = document.getElementById("scenneDuJeu");
+
 const joueur = document.getElementById("joueur");
 const mur = document.getElementsByClassName("meteorite");//cest une liste
 const panelFin = document.getElementById("fondPerdu");
 const boutonRejouer = document.getElementById("boutonJouer");
 const listeObstacleStatique = Array.from(document.querySelectorAll('.meteorite'));
-const gagnerElement = document.getElementById("gagner");
-
-const positionDeDépart = {
-    x : 200,
-    y : 300,
-}
+let gagnerElement = document.getElementById("gagner");
 
 if (scene == null || joueur == null){
     console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
 }
 
-
 window.addEventListener('mousemove', (e) => {
+    if (joueur == null) return;
+    const différance = -10;
     const x = e.pageX;  // / window.innerWidth;
     const y = e.pageY; // / window.innerWidth;
     
-    joueur.style.top = y+"px";
-    joueur.style.left = x+"px";
+    joueur.style.top = (différance+y)+"px";
+    joueur.style.left = (différance+x)+"px";
 
     const rectJoueur = joueur.getBoundingClientRect();
-    for (let meteorite of mur) {
-        const rectMeteorite = meteorite.getBoundingClientRect();
 
-        if (EstEnCollision(rectJoueur, rectMeteorite)) {
-            OuvrirMenuDéfaite();
+    if (mur != null) {
+        for (let meteorite of mur) {
+            const rectMeteorite = meteorite.getBoundingClientRect();
+
+            if (EstEnCollision(rectJoueur, rectMeteorite)) {
+                OuvrirMenuDéfaite();
+            }
         }
     }
 
-    if (EstEnCollision(rectJoueur, gagnerElement.getBoundingClientRect())) {
-        console.log("ici");
-        PasserAuNiveauSuivant();
+    if (gagnerElement != null){
+        if (EstEnCollision(rectJoueur, gagnerElement.getBoundingClientRect())) {
+            console.log("ici");
+            PasserAuNiveauSuivant();
+        }
     }
 });
 
@@ -50,6 +52,7 @@ const Rejouer = () => {
     const body = document.body;
     body.style.cursor = "none"
     body.style.overflowY = "scroll";
+    gagnerElement = document.getElementById("gagner");
 }
 
 const OuvrirMenuDéfaite = () => {
@@ -92,5 +95,7 @@ const TrouverLeNumeroDuNiveauActuel = () => {
         return 1;
     }
 }
+
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();
-Rejouer();
+CrééLeNiveau(TrouverLeNumeroDuNiveauActuel(), scene, OuvrirMenuDéfaite);
+OuvrirMenuDéfaite();
