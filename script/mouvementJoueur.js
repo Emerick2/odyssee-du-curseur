@@ -5,7 +5,6 @@ const panelFin = document.getElementById("fondPerdu");
 const boutonRejouer = document.getElementById("boutonJouer");
 const listeObstacleStatique = Array.from(document.querySelectorAll('.meteorite'));
 const gagnerElement = document.getElementById("gagner");
-let niveauMaximum = 1;
 
 const positionDeDépart = {
     x : 200,
@@ -74,11 +73,10 @@ const EstEnCollision = (rect1, rect2) => {
 }
 
 const PasserAuNiveauSuivant = () => {
-    if (niveauActuel+1 <= niveauMaximum){
-        window.open("/scenes/niveau/"+(niveauActuel+1)+".html");
+    if (niveauActuel+1 <= nombreDeNiveauTotal){
+        OuvrirUneNouvellePage("/scenes/niveau/"+(niveauActuel+1)+".html");
     } else {
-        console.log("ee");
-        window.open("/scenes/credits.html");
+        OuvrirUneNouvellePage("/scenes/credits.html");
     }
 }
 

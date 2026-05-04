@@ -31,9 +31,9 @@ h1{
     border-radius: 12px;
     background-color: rgb(239, 239, 239);
 }
-body{
+/* body{
     cursor: none;
-}
+} */
 
 #joueur{
     position: absolute;

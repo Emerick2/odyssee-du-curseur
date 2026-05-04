@@ -1,0 +1,44 @@
+body{
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+#liste-niveau{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+#liste-niveau a{
+    transition: 0.2s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: kenvector_future_thin;
+    background-color: rgb(228, 230, 255);
+    border-color: black;
+    color: black;
+}
+
+#liste-niveau a:hover{
+    transition: 0.2s;
+    background-color: rgb(242, 243, 255);
+}
+
+#liste-niveau a:active{
+    transition: 0.2s;
+    background-color: rgb(211, 211, 212);
+}
