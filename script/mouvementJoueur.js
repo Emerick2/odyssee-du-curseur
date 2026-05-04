@@ -3,6 +3,9 @@ const joueur = document.getElementById("joueur");
 const mur = document.getElementsByClassName("meteorite");//cest une liste
 const panelFin = document.getElementById("fondPerdu");
 const boutonRejouer = document.getElementById("boutonJouer");
+const listeObstacleStatique = Array.from(document.querySelectorAll('.meteorite'));
+const gagnerElement = document.getElementById("gagner");
+let niveauMaximum = 1;
 
 const positionDeDépart = {
     x : 200,
@@ -13,7 +16,6 @@ if (scene == null || joueur == null){
     console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
 }
 
-const listeObstacleStatique = Array.from(document.querySelectorAll('.meteorite'));
 
 window.addEventListener('mousemove', (e) => {
     const x = e.pageX;  // / window.innerWidth;
@@ -30,13 +32,18 @@ window.addEventListener('mousemove', (e) => {
             OuvrirMenuDéfaite();
         }
     }
+
+    if (EstEnCollision(rectJoueur, gagnerElement.getBoundingClientRect())) {
+        console.log("ici");
+        PasserAuNiveauSuivant();
+    }
 });
 
 window.addEventListener('keydown', (event) => {
     const key = event.key;
-    // if (key === 'e') {
-    //     OuvrirMenuDéfaite();
-    // }
+    if (key === 'e') {
+        PasserAuNiveauSuivant();
+    }
 });
 
 const Rejouer = () => {
@@ -54,11 +61,10 @@ const OuvrirMenuDéfaite = () => {
     if (boutonRejouer != null && boutonRejouer != undefined) {
         boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
         boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
-        console.log(positionDeDépart.x);
     }
 }
 
-function EstEnCollision(rect1, rect2) {
+const EstEnCollision = (rect1, rect2) => {
     return !(
         rect1.right < rect2.left || 
         rect1.left > rect2.right || 
@@ -67,4 +73,26 @@ function EstEnCollision(rect1, rect2) {
     );
 }
 
+const PasserAuNiveauSuivant = () => {
+    if (niveauActuel+1 <= niveauMaximum){
+        window.open("/scenes/niveau/"+(niveauActuel+1)+".html");
+    } else {
+        console.log("ee");
+        window.open("/scenes/credits.html");
+    }
+}
+
+const TrouverLeNumeroDuNiveauActuel = () => {
+    try {
+        const URL = location.href;
+        const tableauURL = URL.split("/");
+        const nomDeLaPage = tableauURL.pop().replace(".html","");
+        const nombre = Number.parseInt(nomDeLaPage);
+        return nombre;
+    } catch (e){
+        console.error(e);
+        return 1;
+    }
+}
+let niveauActuel = TrouverLeNumeroDuNiveauActuel();
 Rejouer();
