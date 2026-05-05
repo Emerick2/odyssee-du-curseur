@@ -1,8 +1,3 @@
-const departMinutes = 1;
-let temps = departMinutes * 60;
-
-const timerElement = document.getElementById("timer");
-
 const chrono = setInterval(() => {
   let minutes = Math.floor(temps / 60);
   let secondes = temps % 60;

@@ -1,15 +1,3 @@
-const scene = document.getElementById("scenneDuJeu");
-
-const joueur = document.getElementById("joueur");
-let mur = Array.from(document.querySelectorAll('.meteorite'));
-let gagnerElement = document.getElementById("gagner");
-const panelFin = document.getElementById("fondPerdu");
-const boutonRejouer = document.getElementById("boutonJouer");
-
-if (scene == null || joueur == null){
-    console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
-}
-
 window.addEventListener('mousemove', (e) => {
     if (joueur == null) return;
     const différance = -10;
@@ -65,15 +53,6 @@ const OuvrirMenuDéfaite = () => {
         boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
         boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
     }
-}
-
-const EstEnCollision = (rect1, rect2) => {
-    return !(
-        rect1.right < rect2.left || 
-        rect1.left > rect2.right || 
-        rect1.bottom < rect2.top || 
-        rect1.top > rect2.bottom
-    );
 }
 
 const PasserAuNiveauSuivant = () => {

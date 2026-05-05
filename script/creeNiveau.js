@@ -1,13 +1,3 @@
-const positionDeDépart = {
-    x : 200,
-    y : 300,
-}
-
-const lesTaille = {
-    "meteorite":100,
-    "gagner":70
-}
-
 const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
     const fichier = "/data/"+id+".json";
     const reponse = await fetch(fichier);
@@ -28,6 +18,8 @@ const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
 
     ListePlacerElement(donnees, scene, "gagner", "/image/kenney_space-shooter-remastered/PNG/ufoYellow.png");
 
+    ListePlacerElement(donnees, scene, "coin", "/image/kenney_space-shooter-remastered/PNG/Power-ups/powerupYellow_star.png");
+
     fonctionAAppeller();
 }
 
@@ -38,6 +30,9 @@ const ListePlacerElement = (donnees, scene, recherche, src) => {
             if (elem != null && elem.length >= 1){
                 const nouvelObjet = AjouterElement(elem[0],elem[1], recherche, src);
                 scene.appendChild(nouvelObjet);
+                if (recherche == "coin") {
+                    coins.push(nouvelObjet);
+                }
             }
         }
     }

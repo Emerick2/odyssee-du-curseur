@@ -1,6 +1,3 @@
-const block = document.getElementById("liste-niveau");
-const template = document.getElementById("template-block-niveau");
-
 const AjouterUnBoutonDeNiveau = (id) => {
     const clone = template.content.cloneNode(true);
     const elementLien = clone.querySelector(".lienA");
