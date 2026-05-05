@@ -86,6 +86,7 @@ const Initialiser = () => {
 
     mur = Array.from(document.querySelectorAll('.meteorite'));
     gagnerElement = document.getElementById("gagner");
+    spikeData = InitialiserSpike();
 }
 
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();

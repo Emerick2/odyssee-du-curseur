@@ -32,7 +32,8 @@ const positionDeDépart = {
 const lesTaille = {
     "meteorite":100,
     "gagner":70,
-    "coin":20
+    "coin":20,
+    "spickes":20
 }
 
 // mouvement du joueur :
@@ -41,3 +42,6 @@ if (scene == null || joueur == null){
     console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
 }
 
+// spickes :
+let spikes = document.querySelectorAll(".spike");
+const spikeSpeed = 2;

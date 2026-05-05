@@ -20,6 +20,8 @@ const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
 
     ListePlacerElement(donnees, scene, "coin", "/image/kenney_space-shooter-remastered/PNG/Power-ups/powerupYellow_star.png");
 
+    ListePlacerElement(donnees, scene, "spike", "/image/kenney_space-shooter-remastered/PNG/Power-ups/bolt_bronze.png");
+
     fonctionAAppeller();
 }
 

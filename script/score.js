@@ -34,31 +34,30 @@ function gameLoop() {
     }
 
 
-    // spikeData.forEach(s => {
+    spikeData.forEach(s => {
+        const dist = distance(
+            s.x,
+            s.y,
+            joueurRect.left,
+            joueurRect.top
+        );
 
-    //     const dist = distance(
-    //         s.x,
-    //         s.y,
-    //         joueurRect.left,
-    //         joueurRect.top
-    //     );
+        if (dist < 175) {
+            s.active = true;
+        }
 
-    //     if (dist < 175) {
-    //         s.active = true;
-    //     }
+        if (s.active) {
+            s.speed += 0.4;
+            s.y += s.speed;
 
-    //     if (s.active) {
-    //         s.speed += 0.4;
-    //         s.y += s.speed;
+            s.el.style.top = s.y + "px";
 
-    //         s.el.style.top = s.y + "px";
-
-    //         if (isColliding(joueur, s.el)) {
-    //             alert("GAME OVER");
-    //             location.reload();
-    //         }
-    //     }
-    // });
+            if (EstEnCollision(joueurRect, s.el.getBoundingClientRect())) {
+                alert("GAME OVER");
+                location.reload();
+            }
+        }
+    });
 
     requestAnimationFrame(gameLoop);
 }
