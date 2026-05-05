@@ -71,7 +71,6 @@ const PasserAuNiveauSuivant = () => {
     // console.log(temps);
     // console.log(niveauActuel);
     const nombreEtoile = Math.round(CalculeTaux(score, scoreMaximum, 3));
-    console.log(nombreEtoile+" étoiles");
     const panelVictoire = document.getElementById("panelDeFin");
     if (panelVictoire){
         panelVictoire.style.display = "flex";
@@ -87,12 +86,22 @@ const PasserAuNiveauSuivant = () => {
         else etoile2.src = chemain+"star_silver.png";
         if (nombreEtoile >= 3) etoile3.src = chemain+"star_gold.png";
         else etoile3.src = chemain+"star_silver.png";
-        console.log("ici !");
     } else {
         console.error("Les images des étoiles ne sont pas référancé.");
     }
-    // enregistrer tentative;
 
+    const boutonDuNiveauSuivant = document.getElementById("boutonNiveauSuivant");
+    if (boutonDuNiveauSuivant != null){
+        if (niveauActuel+1 <= nombreDeNiveauTotal){
+            boutonDuNiveauSuivant.addEventListener('click', (event) => {
+                OuvrirUneNouvellePage("/scenes/niveau/"+(niveauActuel+1)+".html")
+        });
+        } else {
+            boutonDuNiveauSuivant.addEventListener('click', (event) => {
+                OuvrirUneNouvellePage("/scenes/credits.html")
+            });
+        }
+    }
 
     // on retireras le return plus tard.
     return
