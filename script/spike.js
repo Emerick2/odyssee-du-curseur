@@ -4,8 +4,6 @@ const spikePositions = [
     { x: 700, y: 0 }
 ];
 
-
-
 const InitialiserSpike = () => {
     spikes = Array.from(document.querySelectorAll(".spike"));
     const tamporaire = Array.from(spikes).map((el, i) => ({
@@ -25,39 +23,6 @@ const InitialiserSpike = () => {
 }
 
 let spikeData = InitialiserSpike();
-
-/*
-const InitialiserSpike = () => {
-    spikes = Array.from(document.querySelectorAll(".spike"));
-    spikeData = Array.from(spikes).map((el, i) => ({
-        el,
-        x: spikePositions[i].x,
-        y: spikePositions[i].y,
-        active: false,
-        speed: 0
-    }));
-
-    spikeData.forEach(s => {
-        s.el.style.left = s.x + "px";
-        s.el.style.top = s.y + "px";
-    });
-}
-
-let spikeData = Array.from(spikes).map((el, i) => ({
-    el,
-    x: spikePositions[i].x,
-    y: spikePositions[i].y,
-    active: false,
-    speed: 0
-}));
-
-spikeData.forEach(s => {
-    s.el.style.left = s.x + "px";
-    s.el.style.top = s.y + "px";
-});
-
-*/
-
 
 function distance(x1, y1, x2, y2) {
     return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);

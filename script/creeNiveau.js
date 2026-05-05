@@ -34,6 +34,7 @@ const ListePlacerElement = (donnees, scene, recherche, src) => {
                 scene.appendChild(nouvelObjet);
                 if (recherche == "coin") {
                     coins.push(nouvelObjet);
+                    scoreMaximum++;
                 }
             }
         }

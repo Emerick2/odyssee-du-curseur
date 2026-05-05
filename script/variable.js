@@ -14,6 +14,7 @@ const boutonRejouer = document.getElementById("boutonJouer");
 
 // score :
 let score = 0;
+let scoreMaximum = 0;
 let coins = [];
 let audioUnlocked = false;
 
@@ -33,7 +34,7 @@ const lesTaille = {
     "meteorite":100,
     "gagner":70,
     "coin":20,
-    "spickes":20
+    "spike":20
 }
 
 // mouvement du joueur :

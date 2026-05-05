@@ -28,9 +28,9 @@ window.addEventListener('mousemove', (e) => {
 
 window.addEventListener('keydown', (event) => {
     const key = event.key;
-    if (key === 'e') {
-        PasserAuNiveauSuivant();
-    }
+    // if (key === 'e') {
+    //     PasserAuNiveauSuivant();
+    // }
 });
 
 const Rejouer = () => {
@@ -40,6 +40,12 @@ const Rejouer = () => {
     body.style.overflowY = "scroll";
     gagnerElement = document.getElementById("gagner");
     temps = departMinutes * 60;
+    AugmanterSauvegarde(niveauActuel+"_tentative",1);
+
+    console.log(LireLaSauvegarde(niveauActuel+"_pieces"));
+    console.log(LireLaSauvegarde(niveauActuel+"_score"));
+    console.log(LireLaSauvegarde(niveauActuel+"_temps"));
+    console.log(LireLaSauvegarde(niveauActuel+"_tentative"));
 }
 
 const OuvrirMenuDéfaite = () => {
@@ -56,6 +62,40 @@ const OuvrirMenuDéfaite = () => {
 }
 
 const PasserAuNiveauSuivant = () => {
+    AugmanterSauvegarde(niveauActuel+"_pieces",score);
+    SauvegarderLaPlusHauteValeur(niveauActuel+"_score",score);
+    SauvegarderLaPlusHauteValeur(niveauActuel+"_temps",temps);
+
+    // console.log(score);
+    // console.log(scoreMaximum);
+    // console.log(temps);
+    // console.log(niveauActuel);
+    const nombreEtoile = Math.round(CalculeTaux(score, scoreMaximum, 3));
+    console.log(nombreEtoile+" étoiles");
+    const panelVictoire = document.getElementById("panelDeFin");
+    if (panelVictoire){
+        panelVictoire.style.display = "flex";
+    }
+    const etoile1 = document.getElementById("imageEtoile1");
+    const etoile2 = document.getElementById("imageEtoile2");
+    const etoile3 = document.getElementById("imageEtoile3");
+    if (etoile1 != null && etoile2 != null && etoile3 != null){
+        const chemain = "/image/kenney_space-shooter-remastered/PNG/Power-ups/";
+        if (nombreEtoile >= 1) etoile1.src = chemain+"star_gold.png";
+        else etoile1.src = chemain+"star_silver.png";
+        if (nombreEtoile >= 2) etoile2.src = chemain+"star_gold.png";
+        else etoile2.src = chemain+"star_silver.png";
+        if (nombreEtoile >= 3) etoile3.src = chemain+"star_gold.png";
+        else etoile3.src = chemain+"star_silver.png";
+        console.log("ici !");
+    } else {
+        console.error("Les images des étoiles ne sont pas référancé.");
+    }
+    // enregistrer tentative;
+
+
+    // on retireras le return plus tard.
+    return
     if (niveauActuel+1 <= nombreDeNiveauTotal){
         OuvrirUneNouvellePage("/scenes/niveau/"+(niveauActuel+1)+".html");
     } else {

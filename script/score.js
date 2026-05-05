@@ -7,18 +7,6 @@ function playCoinSound() {
     const sound = new Audio("pickupCoin.wav");
 }
 
-
-// function createCoin(x, y) {
-//     const coin = document.createElement("img");
-//     coin.src = "powerupYellow_star.png";
-//     coin.className = "coin";
-//     coin.style.left = x + "px";
-//     coin.style.top = y + "px";
-
-//     document.body.appendChild(coin);
-//     coins.push(coin);
-// }
-
 function gameLoop() {
     const joueurRect = joueur.getBoundingClientRect();
     
