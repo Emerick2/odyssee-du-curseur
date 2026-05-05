@@ -48,9 +48,10 @@ window.addEventListener('keydown', (event) => {
 const Rejouer = () => {
     panelFin.style.display = "none";
     const body = document.body;
-    body.style.cursor = "none"
+    body.style.cursor = "none";
     body.style.overflowY = "scroll";
     gagnerElement = document.getElementById("gagner");
+    temps = departMinutes * 60;
 }
 
 const OuvrirMenuDéfaite = () => {
@@ -59,6 +60,7 @@ const OuvrirMenuDéfaite = () => {
     body.style.cursor = "none";
     // body.style.cursor = "default"
     body.style.overflowY = "hidden";
+    window.location.href = "#top";
     if (boutonRejouer != null && boutonRejouer != undefined) {
         boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
         boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";

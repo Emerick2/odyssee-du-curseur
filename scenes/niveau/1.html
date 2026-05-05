@@ -5,10 +5,12 @@
         <link rel="stylesheet" href="/style/jeu.css">
         <link rel="stylesheet" href="/style/barreDeNavigation.css">
         <script defer src="/script/outils.js"></script>
+        <script defer src="/script/timer.js"></script>
         <script defer src="/script/creeNiveau.js"></script>
         <script defer src="/script/mouvementJoueur.js"></script>
     </head>
     <body>
+        <div id="top"></div>
         <div id="fondPerdu">
             <button id="boutonJouer" onclick="Rejouer()">Jouer</button>
         </div>
@@ -22,5 +24,6 @@
             <a href="/scenes/choix-niveau.html">Choix du niveau</a>
             <a href="/scenes/credits.html">Crédits</a>
         </div>
+        <p id="timer"></p>
     </body>
 </html>
