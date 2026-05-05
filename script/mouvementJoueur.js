@@ -34,7 +34,6 @@ window.addEventListener('mousemove', (e) => {
 
     if (gagnerElement != null){
         if (EstEnCollision(rectJoueur, gagnerElement.getBoundingClientRect())) {
-            console.log("ici");
             PasserAuNiveauSuivant();
         }
     }
@@ -58,7 +57,8 @@ const Rejouer = () => {
 const OuvrirMenuDéfaite = () => {
     panelFin.style.display = "block";
     const body = document.body;
-    body.style.cursor = "default"
+    body.style.cursor = "none";
+    // body.style.cursor = "default"
     body.style.overflowY = "hidden";
     if (boutonRejouer != null && boutonRejouer != undefined) {
         boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
@@ -96,6 +96,15 @@ const TrouverLeNumeroDuNiveauActuel = () => {
     }
 }
 
+const Initialiser = () => {
+    if (boutonRejouer != null && boutonRejouer != undefined) {
+        boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
+        boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
+    }
+    // window.location.reload();
+    document.body.offsetHeight;
+}
+
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();
-CrééLeNiveau(TrouverLeNumeroDuNiveauActuel(), scene, OuvrirMenuDéfaite);
 OuvrirMenuDéfaite();
+CrééLeNiveau(niveauActuel, scene, Initialiser);

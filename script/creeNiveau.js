@@ -31,7 +31,8 @@ const ListePlacerElement = (donnees, scene, recherche, src) => {
         for (let i = 0; i < donnees[recherche].length; i++) {
             const elem = donnees[recherche][i];
             if (elem != null && elem.length >= 1){
-                scene.appendChild(AjouterElement(elem[0],elem[1], recherche, src));
+                const nouvelObjet = AjouterElement(elem[0],elem[1], recherche, src);
+                scene.appendChild(nouvelObjet);
             }
         }
     }
@@ -50,8 +51,23 @@ const AjouterElement = (x, y, alt, src) => {
 }
 
 const PlacerElement = (x, y, nouvelElement) => {
-    nouvelElement.style.left = x+"px";
-    nouvelElement.style.top = y+"px";
+    const maxXY = 500;
+
+    const largeur = nouvelElement.offsetWidth || parseFloat(nouvelElement.style.width) || 0;
+    const hauteur = nouvelElement.offsetHeight || parseFloat(nouvelElement.style.height) || 0;
+
+    const limiteX = maxXY - largeur;
+    const limiteY = maxXY - hauteur;
+
+    if (x < 0) x = 0;
+    if (x > limiteX) x = limiteX;
+
+    if (y < 0) y = 0;
+    if (y > limiteY) y = limiteY;
+
+    nouvelElement.style.left = x + "px";
+    nouvelElement.style.top = y + "px";
+
     return nouvelElement;
 }
 
