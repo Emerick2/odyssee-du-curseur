@@ -1,22 +1,3 @@
-
-// const spikePositions = [
-//     { x: 100, y: 0 },
-//     { x: 400, y: 0 },
-//     { x: 700, y: 0 }
-// ];
-
-// const spikeData = Array.from(spikes).map((el, i) => ({
-//     el,
-//     x: spikePositions[i].x,
-//     y: spikePositions[i].y,
-//     active: false,
-//     speed: 0
-// }));
-
-// spikeData.forEach(s => {
-//     s.el.style.left = s.x + "px";
-//     s.el.style.top = s.y + "px";
-// });
 const spikePositions = [
     { x: 100, y: 0 },
     { x: 400, y: 0 },

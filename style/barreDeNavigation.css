@@ -1,5 +1,6 @@
 #barreDeNavigation{
-    border: solid;
+    border: solid 0px;
+    border-right-width: 2px;
     position: absolute;
     top:0px;
     left:0px;
@@ -10,6 +11,9 @@
     padding-top: 30px;
     gap:30px;
     font-size: 1.6rem;
+    background-color: aliceblue;
+    cursor:default;
+    z-index: 10;
 }
 
 #barreDeNavigation a{
@@ -34,4 +38,20 @@
 #barreDeNavigation a:active{
     transition: 0.2s;
     background-color: rgb(215, 215, 218);
+}
+
+#timer, #score{
+    font-family: kenvector_future_thin;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 0;
+}
+
+#score{
+    font-size: 1rem;
+}
+
+#score::before{
+    content: "score : ";
 }

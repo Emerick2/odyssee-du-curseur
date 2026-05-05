@@ -29,7 +29,7 @@ function gameLoop() {
             coins.splice(i, 1);
 
             score++;
-            scoreDisplay.textContent = "Score: " + score;
+            scoreDisplay.textContent = score;
         }
     }
 

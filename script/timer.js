@@ -1,19 +1,19 @@
 const chrono = setInterval(() => {
-  let minutes = Math.floor(temps / 60);
-  let secondes = temps % 60;
+    let minutes = Math.floor(temps / 60);
+    let secondes = temps % 60;
 
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  secondes = secondes < 10 ? "0" + secondes : secondes;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    secondes = secondes < 10 ? "0" + secondes : secondes;
 
-  timerElement.innerText = `${minutes}:${secondes}`;
+    if (timerElement != null) timerElement.innerText = `${minutes}:${secondes}`;
 
-  temps--;
+    temps--;
 
-  if (temps < 0) {
-    clearInterval(chrono);
-    timerElement.innerText = "00:00";
-    gameOver();
-  }
+    if (temps < 0) {
+        clearInterval(chrono);
+        if (timerElement != null) timerElement.innerText = "00:00";
+        gameOver();
+    }
 }, 1000);
 
 const gameOver = () => {
