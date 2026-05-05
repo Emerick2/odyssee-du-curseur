@@ -3,6 +3,11 @@ const positionDeDépart = {
     y : 300,
 }
 
+const lesTaille = {
+    "meteorite":100,
+    "gagner":70
+}
+
 const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
     const fichier = "/data/"+id+".json";
     const reponse = await fetch(fichier);
@@ -47,14 +52,16 @@ const AjouterElement = (x, y, alt, src) => {
     }
     nouvelElement.src = src;
     nouvelElement.alt = alt;
-    return PlacerElement(x, y, nouvelElement);
+    return PlacerElement(x, y, nouvelElement, alt);
 }
 
-const PlacerElement = (x, y, nouvelElement) => {
+const PlacerElement = (x, y, nouvelElement, alt) => {
     const maxXY = 500;
 
-    const largeur = nouvelElement.offsetWidth || parseFloat(nouvelElement.style.width) || 0;
-    const hauteur = nouvelElement.offsetHeight || parseFloat(nouvelElement.style.height) || 0;
+    // const largeur = nouvelElement.offsetWidth || parseFloat(nouvelElement.style.width) || 0;
+    // const hauteur = nouvelElement.offsetHeight || parseFloat(nouvelElement.style.height) || 0;
+    const largeur = lesTaille[alt] || 0
+    const hauteur = lesTaille[alt] || 0
 
     const limiteX = maxXY - largeur;
     const limiteY = maxXY - hauteur;

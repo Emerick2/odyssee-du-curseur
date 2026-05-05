@@ -1,11 +1,10 @@
 const scene = document.getElementById("scenneDuJeu");
 
 const joueur = document.getElementById("joueur");
-const mur = document.getElementsByClassName("meteorite");//cest une liste
+let mur = Array.from(document.querySelectorAll('.meteorite'));
+let gagnerElement = document.getElementById("gagner");
 const panelFin = document.getElementById("fondPerdu");
 const boutonRejouer = document.getElementById("boutonJouer");
-const listeObstacleStatique = Array.from(document.querySelectorAll('.meteorite'));
-let gagnerElement = document.getElementById("gagner");
 
 if (scene == null || joueur == null){
     console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
@@ -103,6 +102,9 @@ const Initialiser = () => {
     }
     // window.location.reload();
     document.body.offsetHeight;
+
+    mur = Array.from(document.querySelectorAll('.meteorite'));
+    gagnerElement = document.getElementById("gagner");
 }
 
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();

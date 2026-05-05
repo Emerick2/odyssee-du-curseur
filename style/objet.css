@@ -1,0 +1,19 @@
+#joueur{
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    width: 40px;
+}
+
+.meteorite{
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+}
+
+#gagner{
+    position: absolute;
+    width: 70px;
+    z-index: 2;
+}
