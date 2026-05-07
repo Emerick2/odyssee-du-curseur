@@ -70,3 +70,16 @@ const SauvegarderLaPlusBasseValeur = (clef, valeur) => {
 const CalculeTaux = (valeurPartielle, valeurTotale, taux) => {
     return (valeurPartielle / valeurTotale) * taux
 }
+
+const TrouverLeNumeroDuNiveauActuel = () => {
+    try {
+        const URL = location.href;
+        const tableauURL = URL.split("/");
+        const nomDeLaPage = tableauURL.pop().replace(".html","");
+        const nombre = Number.parseInt(nomDeLaPage);
+        return nombre;
+    } catch (e){
+        console.error(e);
+        return 1;
+    }
+}

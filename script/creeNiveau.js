@@ -20,7 +20,7 @@ const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
 
     ListePlacerElement(donnees, scene, "coin", "/image/kenney_space-shooter-remastered/PNG/Power-ups/powerupYellow_star.png");
 
-    ListePlacerElement(donnees, scene, "spike", "/image/kenney_space-shooter-remastered/PNG/Power-ups/bolt_bronze.png");
+    ListePlacerElement(donnees, scene, "spike", "/image/kenney_space-shooter-remastered/PNG/Enemies/enemyBlack1.png");
 
     fonctionAAppeller();
 }
@@ -35,6 +35,11 @@ const ListePlacerElement = (donnees, scene, recherche, src) => {
                 if (recherche == "coin") {
                     coins.push(nouvelObjet);
                     scoreMaximum++;
+                } else if (recherche == "spike"){
+                    const objet = {};
+                    objet.x = elem[0];
+                    objet.y = elem[1];
+                    spikePositions.push(objet);
                 }
             }
         }

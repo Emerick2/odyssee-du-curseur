@@ -1,9 +1,3 @@
-const spikePositions = [
-    { x: 100, y: 0 },
-    { x: 400, y: 0 },
-    { x: 700, y: 0 }
-];
-
 const InitialiserSpike = () => {
     spikes = Array.from(document.querySelectorAll(".spike"));
     const tamporaire = Array.from(spikes).map((el, i) => ({

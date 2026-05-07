@@ -26,7 +26,7 @@ let temps = departMinutes * 60;
 
 
 // outils :
-const nombreDeNiveauTotal = 2;
+const nombreDeNiveauTotal = 3;
 let positionDeDépart = {
     x : 0,
     y : 0,
@@ -51,7 +51,10 @@ if (scene == null || joueur == null){
 // spickes :
 let spikes = document.querySelectorAll(".spike");
 const spikeSpeed = 2;
-
+const spikePositions = [];
+//{ x: 100, y: 0 },
 
 //timer :
 let secondes = 0;
+
+let ilFautOuvirLeMenuDeDefaite = true;
