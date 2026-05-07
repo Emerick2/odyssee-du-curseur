@@ -32,7 +32,7 @@ function distance(x1, y1, x2, y2) {
         
    largeurDeLaPage -= (tailleDeLaScèneDeJeu*1.5);
     x2+=largeurDeLaPage;
-    console.log(x2);
+    // console.log(x2);
     // console.log(x2);
    
    valeurX = ((x1+décalage < x2 || x1-décalage > x2))
