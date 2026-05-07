@@ -8,8 +8,7 @@ body{
     flex-direction: column;
     margin: 0;
     overflow-x : hidden;
-    overflow-y :scroll;
-    /* hidden */
+    overflow-y :hidden;
 }
 
 h1{
@@ -27,45 +26,9 @@ h1{
     border-radius: 12px;
     background-color: rgb(239, 239, 239);
     margin-bottom: 100px;
-    /* overflow:visible; */
 }
 
 /* ------------- */
-
-/* .scenneDuJeuDimansion{
-    z-index: 0;
-    position: relative;
-    width: 500px;
-    aspect-ratio: 1/1;
-    border: solid;
-    border-radius: 12px;
-    margin-bottom: 100px;
-}
-
-#fondPerdu{
-    position: relative;
-    display: flex;
-    justify-items: center;
-    background-color: rgba(250, 235, 215, 1);
-    width: 100vw;
-    height: 100vh;
-    padding-top: 80px;
-}
-
-#boutonJouer{
-    position: static;
-    width: 80px;
-    height: 80px;
-    border: solid 2px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-}
-
-#boutonJouer:hover{
-    background-color: aqua;
-    cursor:none;
-}
- */
 
 #fondPerdu{
     background-color: rgba(0, 0, 0, 0.519);

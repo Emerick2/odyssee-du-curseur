@@ -41,7 +41,7 @@ const Rejouer = () => {
     panelFin.style.display = "none";
     const body = document.body;
     body.style.cursor = "none";
-    body.style.overflowY = "scroll";
+    if (autoriserLeScorll) body.style.overflowY = "scroll";
     gagnerElement = document.getElementById("gagner");
     temps = departMinutes * 60;
     secondes = 0;
@@ -56,8 +56,7 @@ const OuvrirMenuDéfaite = () => {
     panelFin.style.display = "block";
     const body = document.body;
     body.style.cursor = "none";
-    // body.style.cursor = "default"
-    body.style.overflowY = "hidden";
+    if (autoriserLeScorll) body.style.overflowY = "hidden";
     window.location.href = "#top";
     if (boutonRejouer != null && boutonRejouer != undefined) {
         PlacerBoutonJouer();
@@ -145,8 +144,6 @@ const Initialiser = () => {
 
 const PlacerBoutonJouer = () => {
     if (boutonRejouer) {
-        console.log("nombreX : "+positionDeDépart.x)
-        console.log("nombreY : "+positionDeDépart.y)
         boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
         boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
     }

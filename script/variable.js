@@ -39,6 +39,9 @@ const lesTaille = {
     "spike":20
 }
 
+const autoriserLeScorll = false;
+
+
 // mouvement du joueur :
 
 if (scene == null || joueur == null){

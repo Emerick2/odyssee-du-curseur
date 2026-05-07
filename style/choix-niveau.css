@@ -74,6 +74,6 @@ body{
 }
 
 
-.lienABloquer .textePiece::before, .lienABloquer .texteTemps::before{
+.cacherStatistiques .textePiece::before, .cacherStatistiques .texteTemps::before{
     content: "";
 }

@@ -8,10 +8,15 @@ const AjouterUnBoutonDeNiveau = (id) => {
 
     if (id > 1 && LireLaSauvegarde((id-1)+"_temps") == 0){
         elementLien.classList.add("lienABloquer");
+        elementLien.classList.add("cacherStatistiques");
     } else {
         elementLien.href = "/scenes/niveau/"+id+".html";
-        if (textePiece != null) textePiece.textContent = LireLaSauvegarde(id+"_score")+"/3";
-        if (texteTemps != null) texteTemps.textContent = LireLaSauvegarde(id+"_temps");
+        if (LireLaSauvegarde(id+"_temps") > 0){
+            if (textePiece != null) textePiece.textContent = LireLaSauvegarde(id+"_score")+"/3";
+            if (texteTemps != null) texteTemps.textContent = LireLaSauvegarde(id+"_temps");
+        } else {
+            elementLien.classList.add("cacherStatistiques");
+        }
 
     }
     block.appendChild(clone);
