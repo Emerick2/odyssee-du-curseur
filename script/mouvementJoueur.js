@@ -40,6 +40,7 @@ const Rejouer = () => {
     body.style.overflowY = "scroll";
     gagnerElement = document.getElementById("gagner");
     temps = departMinutes * 60;
+    secondes = 0;
     AugmanterSauvegarde(niveauActuel+"_tentative",1);
 
     console.log(LireLaSauvegarde(niveauActuel+"_pieces"));
@@ -56,15 +57,15 @@ const OuvrirMenuDéfaite = () => {
     body.style.overflowY = "hidden";
     window.location.href = "#top";
     if (boutonRejouer != null && boutonRejouer != undefined) {
-        boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
-        boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
+        boutonRejouer.style.left = Number.parseInt(positionDeDépart.x)+"px";
+        boutonRejouer.style.top = Number.parseInt(positionDeDépart.y)+"px";
     }
 }
 
 const PasserAuNiveauSuivant = () => {
     AugmanterSauvegarde(niveauActuel+"_pieces",score);
     SauvegarderLaPlusHauteValeur(niveauActuel+"_score",score);
-    SauvegarderLaPlusHauteValeur(niveauActuel+"_temps",temps);
+    SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
 
     // console.log(score);
     // console.log(scoreMaximum);

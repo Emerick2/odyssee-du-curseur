@@ -46,3 +46,7 @@ if (scene == null || joueur == null){
 // spickes :
 let spikes = document.querySelectorAll(".spike");
 const spikeSpeed = 2;
+
+
+//timer :
+let secondes = 0;
