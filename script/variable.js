@@ -50,7 +50,7 @@ if (scene == null || joueur == null){
 
 // spickes :
 let spikes = document.querySelectorAll(".spike");
-const spikeSpeed = 2;
+const spikeSpeed = 0.3;
 const spikePositions = [];
 //{ x: 100, y: 0 },
 
