@@ -9,8 +9,10 @@ const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
 
     if (donnees["depart"] != null) {
         if (donnees["depart"] != null && donnees["depart"].length >= 1){
-            positionDeDépart.x = donnees["depart"][0];
             positionDeDépart.x = donnees["depart"][1];
+            positionDeDépart.y = donnees["depart"][0];
+            console.log(positionDeDépart)
+            console.log("placer");
         }
     }
 

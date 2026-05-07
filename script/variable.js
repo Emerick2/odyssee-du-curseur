@@ -1,3 +1,5 @@
+let enJeu = false;
+
 // élément de la page :
 const block = document.getElementById("liste-niveau");
 const template = document.getElementById("template-block-niveau");
@@ -26,8 +28,8 @@ let temps = departMinutes * 60;
 // outils :
 const nombreDeNiveauTotal = 2;
 let positionDeDépart = {
-    x : 200,
-    y : 300,
+    x : 0,
+    y : 0,
 }
 
 const lesTaille = {

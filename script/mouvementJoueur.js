@@ -7,30 +7,34 @@ window.addEventListener('mousemove', (e) => {
     joueur.style.top = (différance+y)+"px";
     joueur.style.left = (différance+x)+"px";
 
-    const rectJoueur = joueur.getBoundingClientRect();
+    
+    if (enJeu) {
+        const rectJoueur = joueur.getBoundingClientRect();
+        if (mur != null) {
+            for (let meteorite of mur) {
+                const rectMeteorite = meteorite.getBoundingClientRect();
 
-    if (mur != null) {
-        for (let meteorite of mur) {
-            const rectMeteorite = meteorite.getBoundingClientRect();
-
-            if (EstEnCollision(rectJoueur, rectMeteorite)) {
-                OuvrirMenuDéfaite();
+                if (EstEnCollision(rectJoueur, rectMeteorite)) {
+                    OuvrirMenuDéfaite();
+                }
             }
         }
-    }
 
-    if (gagnerElement != null){
-        if (EstEnCollision(rectJoueur, gagnerElement.getBoundingClientRect())) {
-            PasserAuNiveauSuivant();
+        if (gagnerElement != null){
+            if (EstEnCollision(rectJoueur, gagnerElement.getBoundingClientRect())) {
+                PasserAuNiveauSuivant();
+            }
         }
     }
 });
 
 window.addEventListener('keydown', (event) => {
-    const key = event.key;
-    // if (key === 'e') {
-    //     PasserAuNiveauSuivant();
-    // }
+    if (enJeu){
+        const key = event.key;
+        // if (key === 'e') {
+        //     PasserAuNiveauSuivant();
+        // }
+    }
 });
 
 const Rejouer = () => {
@@ -41,15 +45,14 @@ const Rejouer = () => {
     gagnerElement = document.getElementById("gagner");
     temps = departMinutes * 60;
     secondes = 0;
+    score = 0;
     AugmanterSauvegarde(niveauActuel+"_tentative",1);
 
-    console.log(LireLaSauvegarde(niveauActuel+"_pieces"));
-    console.log(LireLaSauvegarde(niveauActuel+"_score"));
-    console.log(LireLaSauvegarde(niveauActuel+"_temps"));
-    console.log(LireLaSauvegarde(niveauActuel+"_tentative"));
+    enJeu = true;
 }
 
 const OuvrirMenuDéfaite = () => {
+    enJeu = false;
     panelFin.style.display = "block";
     const body = document.body;
     body.style.cursor = "none";
@@ -57,14 +60,15 @@ const OuvrirMenuDéfaite = () => {
     body.style.overflowY = "hidden";
     window.location.href = "#top";
     if (boutonRejouer != null && boutonRejouer != undefined) {
-        boutonRejouer.style.left = Number.parseInt(positionDeDépart.x)+"px";
-        boutonRejouer.style.top = Number.parseInt(positionDeDépart.y)+"px";
+        PlacerBoutonJouer();
     }
+    CrééLeNiveau(niveauActuel, scene, Initialiser);
 }
 
 let sauvegardeEffectuer = false;
 const PasserAuNiveauSuivant = () => {
     if (!sauvegardeEffectuer){
+        enJeu = false;
         sauvegardeEffectuer = true;
         let nombreEtoile = Math.round(CalculeTaux(score, scoreMaximum, 3));
         if (scoreMaximum <= 0) {
@@ -129,10 +133,7 @@ const TrouverLeNumeroDuNiveauActuel = () => {
 }
 
 const Initialiser = () => {
-    if (boutonRejouer != null && boutonRejouer != undefined) {
-        boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
-        boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
-    }
+    PlacerBoutonJouer();
     // window.location.reload();
     document.body.offsetHeight;
 
@@ -140,6 +141,17 @@ const Initialiser = () => {
     gagnerElement = document.getElementById("gagner");
     spikeData = InitialiserSpike();
 }
+
+
+const PlacerBoutonJouer = () => {
+    if (boutonRejouer) {
+        console.log("nombreX : "+positionDeDépart.x)
+        console.log("nombreY : "+positionDeDépart.y)
+        boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
+        boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
+    }
+}
+
 
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();
 OuvrirMenuDéfaite();

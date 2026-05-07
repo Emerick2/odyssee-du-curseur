@@ -18,7 +18,9 @@ h1{
 
 
 #scenneDuJeu{
-    position: relative;
+    z-index: -20;
+    top:80px;
+    position: absolute;
     width: 500px;
     aspect-ratio: 1/1;
     border: solid;
@@ -28,29 +30,30 @@ h1{
     /* overflow:visible; */
 }
 
+/* ------------- */
+
+/* .scenneDuJeuDimansion{
+    z-index: 0;
+    position: relative;
+    width: 500px;
+    aspect-ratio: 1/1;
+    border: solid;
+    border-radius: 12px;
+    margin-bottom: 100px;
+}
+
 #fondPerdu{
-    position: static;
+    position: relative;
+    display: flex;
+    justify-items: center;
     background-color: rgba(250, 235, 215, 1);
     width: 100vw;
     height: 100vh;
+    padding-top: 80px;
 }
 
-/* #fondPerdu {
-    position: absolute;
-    z-index: 100;
-    margin: 0;
-    padding: 0;
-} */
-
-
-
-
-/* ------------- */
-
 #boutonJouer{
-    position: absolute;
-    /* top:100px; */
-    /* left: 500px; */
+    position: static;
     width: 80px;
     height: 80px;
     border: solid 2px;
@@ -59,9 +62,40 @@ h1{
 }
 
 #boutonJouer:hover{
-    /* z-index: 2; */
     background-color: aqua;
     cursor:none;
-    /* cursor: pointer; */
+}
+ */
+
+#fondPerdu{
+    background-color: rgba(0, 0, 0, 0.519);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-items: center;
+    padding-top: 80px;
 }
 
+.scenneDuJeuDimansion{
+    z-index: 0;
+    position: relative;
+    width: 500px;
+    aspect-ratio: 1/1;
+    border: solid 0px;
+    border-radius: 12px;
+    margin-bottom: 100px;
+}
+
+#boutonJouer{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: solid 2px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+#boutonJouer:hover{
+    background-color: aqua;
+    cursor:none;
+}
