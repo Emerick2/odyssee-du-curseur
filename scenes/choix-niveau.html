@@ -3,6 +3,8 @@
     <head>
         <title>Choix du niveau | L'odyssée du Curseur</title>
         <link rel="stylesheet" href="/style/jeu.css">
+        <link rel="stylesheet" href="/style/menu.css">
+        <link rel="stylesheet" href="/style/bouton.css">
         <link rel="stylesheet" href="/style/choix-niveau.css">
         <script defer src="/script/variable.js"></script>
         <script defer src="/script/outils.js"></script>
@@ -10,10 +12,17 @@
     </head>
     <body>
         <template id="template-block-niveau">
-            <a class="lienA" href="/scenes/niveau/1.html">1</a>
+            <a class="lienA">
+                <p class="texteNomNiveau">1</p>
+                <p class="textePiece"></p>
+                <p class="texteTemps"></p>
+            </a>
         </template>
         <h1>Quel niveau shouaitez-vous réaliser ?</h1>
         <div id="liste-niveau">
+        </div>
+        <div id="liste-boutons">
+            <button class="boutonReinitialiser" onclick="BoutonReinitialiser()">Réinitialiser la sauvegarde</button>
         </div>
     </body>
 </html>

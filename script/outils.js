@@ -21,6 +21,7 @@ const SuprimerSauvegarder = (clef) => {
 }
 
 const SuprimerToutesLesSauvegardes = () => {
+    console.log("Sauvegarde effacer");
     localStorage.clear();
 }
 
@@ -61,7 +62,7 @@ const SauvegarderLaPlusBasseValeur = (clef, valeur) => {
     } else {
         nombreActuel = Number.parseInt(nombreActuel);
     }
-    if (valeur < nombreActuel){
+    if (valeur < nombreActuel || nombreActuel <= 0){
         Sauvegarder(clef, valeur);
     }
 }

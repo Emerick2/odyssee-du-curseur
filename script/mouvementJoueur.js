@@ -62,54 +62,56 @@ const OuvrirMenuDéfaite = () => {
     }
 }
 
+let sauvegardeEffectuer = false;
 const PasserAuNiveauSuivant = () => {
-    AugmanterSauvegarde(niveauActuel+"_pieces",score);
-    SauvegarderLaPlusHauteValeur(niveauActuel+"_score",score);
-    SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
-
-    // console.log(score);
-    // console.log(scoreMaximum);
-    // console.log(temps);
-    // console.log(niveauActuel);
-    const nombreEtoile = Math.round(CalculeTaux(score, scoreMaximum, 3));
-    const panelVictoire = document.getElementById("panelDeFin");
-    if (panelVictoire){
-        panelVictoire.style.display = "flex";
-    }
-    const etoile1 = document.getElementById("imageEtoile1");
-    const etoile2 = document.getElementById("imageEtoile2");
-    const etoile3 = document.getElementById("imageEtoile3");
-    if (etoile1 != null && etoile2 != null && etoile3 != null){
-        const chemain = "/image/kenney_space-shooter-remastered/PNG/Power-ups/";
-        if (nombreEtoile >= 1) etoile1.src = chemain+"star_gold.png";
-        else etoile1.src = chemain+"star_silver.png";
-        if (nombreEtoile >= 2) etoile2.src = chemain+"star_gold.png";
-        else etoile2.src = chemain+"star_silver.png";
-        if (nombreEtoile >= 3) etoile3.src = chemain+"star_gold.png";
-        else etoile3.src = chemain+"star_silver.png";
-    } else {
-        console.error("Les images des étoiles ne sont pas référancé.");
-    }
-
-    const boutonDuNiveauSuivant = document.getElementById("boutonNiveauSuivant");
-    if (boutonDuNiveauSuivant != null){
-        if (niveauActuel+1 <= nombreDeNiveauTotal){
-            boutonDuNiveauSuivant.addEventListener('click', (event) => {
-                OuvrirUneNouvellePage("/scenes/niveau/"+(niveauActuel+1)+".html")
-        });
-        } else {
-            boutonDuNiveauSuivant.addEventListener('click', (event) => {
-                OuvrirUneNouvellePage("/scenes/credits.html")
-            });
+    if (!sauvegardeEffectuer){
+        sauvegardeEffectuer = true;
+        let nombreEtoile = Math.round(CalculeTaux(score, scoreMaximum, 3));
+        if (scoreMaximum <= 0) {
+            nombreEtoile = 3;
         }
-    }
+        AugmanterSauvegarde(niveauActuel+"_pieces",score);
+        SauvegarderLaPlusHauteValeur(niveauActuel+"_score",nombreEtoile);
+        SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
 
-    // on retireras le return plus tard.
-    return
-    if (niveauActuel+1 <= nombreDeNiveauTotal){
-        OuvrirUneNouvellePage("/scenes/niveau/"+(niveauActuel+1)+".html");
-    } else {
-        OuvrirUneNouvellePage("/scenes/credits.html");
+        const panelVictoire = document.getElementById("panelDeFin");
+        if (panelVictoire){
+            panelVictoire.style.display = "flex";
+        }
+        const etoile1 = document.getElementById("imageEtoile1");
+        const etoile2 = document.getElementById("imageEtoile2");
+        const etoile3 = document.getElementById("imageEtoile3");
+        if (etoile1 != null && etoile2 != null && etoile3 != null){
+            const chemain = "/image/kenney_space-shooter-remastered/PNG/Power-ups/";
+            if (nombreEtoile >= 1) etoile1.src = chemain+"star_gold.png";
+            else etoile1.src = chemain+"star_silver.png";
+            if (nombreEtoile >= 2) etoile2.src = chemain+"star_gold.png";
+            else etoile2.src = chemain+"star_silver.png";
+            if (nombreEtoile >= 3) etoile3.src = chemain+"star_gold.png";
+            else etoile3.src = chemain+"star_silver.png";
+        } else {
+            console.error("Les images des étoiles ne sont pas référancé.");
+        }
+
+        const boutonDuNiveauSuivant = document.getElementById("boutonNiveauSuivant");
+        if (boutonDuNiveauSuivant != null){
+            if (niveauActuel+1 <= nombreDeNiveauTotal){
+                boutonDuNiveauSuivant.addEventListener('click', (event) => {
+                    OuvrirUneNouvellePage("/scenes/niveau/"+(niveauActuel+1)+".html")
+            });
+            } else {
+                boutonDuNiveauSuivant.addEventListener('click', (event) => {
+                    OuvrirUneNouvellePage("/scenes/credits.html")
+                });
+            }
+        } else {
+            console.error("Il manque le panel de fin.");
+            if (niveauActuel+1 <= nombreDeNiveauTotal){
+                OuvrirUneNouvellePage("/scenes/niveau/"+(niveauActuel+1)+".html");
+            } else {
+                OuvrirUneNouvellePage("/scenes/credits.html");
+            }
+        }
     }
 }
 
