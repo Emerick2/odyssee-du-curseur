@@ -62,6 +62,9 @@ let secondes = 0;
 let ilFautOuvirLeMenuDeDefaite = true;
 
 // musique :
+let musiqueAutoriser = true;
 const musiqueDeFond = "/musique/musique-de-fond.mp3";
 let audioFond = new Audio(musiqueDeFond);
-audioFond.play();
+if (musiqueAutoriser){
+    audioFond.play();
+}

@@ -62,3 +62,49 @@ h1{
     background-color: aqua;
     cursor:none;
 }
+
+#boutonMusique{
+    transition: 0.2s;
+    background-color: rgb(255, 230, 250);
+    border: solid rgb(209, 125, 125) 1.5px;
+    box-shadow: 2px 2px rgb(209, 125, 125);
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 20px;
+    top:20px;
+    user-select: none;
+}
+
+#boutonMusique:hover{
+    transition: 0.2s;
+    background-color: rgb(255, 195, 243);
+    box-shadow: 1px 1px rgb(209, 125, 125);
+    transform: translateX(1px) translateY(1px);
+}
+
+#boutonMusique:active{
+    transition: 0.2s;
+    background-color: rgb(255, 164, 237);
+    box-shadow: 0px 0px rgb(209, 125, 125);
+    transform: translateX(2px) translateY(2px);
+}
+
+.boutonMusiqueActif{
+    background-color: rgb(225, 255, 195) !important;
+    border-color: rgb(136, 209, 125) !important;
+    box-shadow: 1px 1px rgb(136, 209, 125) !important;
+}
+
+.boutonMusiqueActif:hover{
+    background-color: rgb(199, 237, 160) !important;
+    border-color: rgb(136, 209, 125) !important;
+    box-shadow: 1px 1px rgb(136, 209, 125) !important;
+}
+
+.boutonMusiqueActif:active{
+    background-color: rgb(180, 245, 115) !important;
+    border-color: rgb(136, 209, 125) !important;
+    box-shadow: 1px 1px rgb(136, 209, 125) !important;
+}

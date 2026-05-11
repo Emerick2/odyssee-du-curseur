@@ -1,6 +1,7 @@
 const Rejouer = () => {
-    audioFond.play();
-    console.log("musique lancer")
+    if (musiqueAutoriser){
+        audioFond.play();
+    }
     panelFin.style.display = "none";
     const body = document.body;
     body.style.cursor = "none";
@@ -101,5 +102,21 @@ const PlacerBoutonJouer = () => {
     if (boutonRejouer) {
         boutonRejouer.style.top = Number.parseInt(positionDeDepart.x)+"px";
         boutonRejouer.style.left = Number.parseInt(positionDeDepart.y)+"px";
+    }
+}
+
+const ModifierStatusMusique = () => {
+    musiqueAutoriser = !musiqueAutoriser;
+    const boutonMusique = document.getElementById("boutonMusique");
+    if (musiqueAutoriser){
+        audioFond.play();
+        if (boutonMusique){
+            boutonMusique.classList.add("boutonMusiqueActif");
+        }
+    } else {
+        audioFond.pause();
+        if (boutonMusique){
+            boutonMusique.classList.remove("boutonMusiqueActif");
+        }
     }
 }
