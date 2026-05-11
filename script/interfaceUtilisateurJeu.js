@@ -1,4 +1,6 @@
 const Rejouer = () => {
+    audioFond.play();
+    console.log("musique lancer")
     panelFin.style.display = "none";
     const body = document.body;
     body.style.cursor = "none";
@@ -11,6 +13,11 @@ const Rejouer = () => {
 
     enJeu = true;
 }
+
+audioFond.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
 
 const OuvrirMenuDefaite = () => {
     enJeu = false;

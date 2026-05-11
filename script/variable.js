@@ -60,3 +60,8 @@ const spikePositions = [];
 let secondes = 0;
 
 let ilFautOuvirLeMenuDeDefaite = true;
+
+// musique :
+const musiqueDeFond = "/musique/musique-de-fond.mp3";
+let audioFond = new Audio(musiqueDeFond);
+audioFond.play();
