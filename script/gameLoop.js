@@ -3,7 +3,7 @@ function gameLoop() {
         const joueurRect = joueur.getBoundingClientRect();
         
         for (let i = coins.length - 1; i >= 0; i--) {
-            if (EstEnCollision(joueurRect, coins[i].getBoundingClientRect())) {
+            if (EstEnCollision(joueur, coins[i])) {
                 playCoinSound();
                 coins[i].remove();
                 coins.splice(i, 1);
@@ -32,7 +32,7 @@ function gameLoop() {
 
                 s.el.style.top = s.y + "px";
 
-                if (EstEnCollision(joueurRect, s.el.getBoundingClientRect())) {
+                if (EstEnCollision(joueur, s.el)) {
                     ilFautOuvirLeMenuDeDefaite = true;
                 }
             }
@@ -40,7 +40,7 @@ function gameLoop() {
     }
     if (ilFautOuvirLeMenuDeDefaite){
         ilFautOuvirLeMenuDeDefaite = false;
-        OuvrirMenuDéfaite();
+        OuvrirMenuDefaite();
     }
 
     requestAnimationFrame(gameLoop);
@@ -51,5 +51,5 @@ function gameLoop() {
 
 
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();
-CrééLeNiveau(niveauActuel, scene, Initialiser);
+CreeLeNiveau(niveauActuel, scene, Initialiser);
 gameLoop();

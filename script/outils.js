@@ -1,16 +1,41 @@
+const memoCanvas = document.createElement('canvas');
+const memoCtx = memoCanvas.getContext('2d', { willReadFrequently: true });
+
 const OuvrirUneNouvellePage = (nomDeLaPage) => {
     // window.open(nomDeLaPage);
     window.location.href = nomDeLaPage;
 }
 
-const EstEnCollision = (rect1, rect2) => {
-    return !(
-        rect1.right < rect2.left || 
-        rect1.left > rect2.right || 
-        rect1.bottom < rect2.top || 
-        rect1.top > rect2.bottom
-    );
-}
+const EstEnCollision = (joueur, elementCible) => {
+    const rect1 = joueur.getBoundingClientRect();
+    const rect2 = elementCible.getBoundingClientRect();
+
+    const intersectionX = Math.max(rect1.left, rect2.left);
+    const intersectionY = Math.max(rect1.top, rect2.top);
+    const intersectionW = Math.min(rect1.right, rect2.right) - intersectionX;
+    const intersectionH = Math.min(rect1.bottom, rect2.bottom) - intersectionY;
+
+    if (intersectionW <= 0 || intersectionH <= 0) return false;
+
+    memoCanvas.width = intersectionW;
+    memoCanvas.height = intersectionH;
+
+    memoCtx.clearRect(0, 0, intersectionW, intersectionH);
+    memoCtx.drawImage(joueur, rect1.left - intersectionX, rect1.top - intersectionY, rect1.width, rect1.height);
+    const pixelsJoueur = memoCtx.getImageData(0, 0, intersectionW, intersectionH).data;
+
+    memoCtx.clearRect(0, 0, intersectionW, intersectionH);
+    memoCtx.drawImage(elementCible, rect2.left - intersectionX, rect2.top - intersectionY, rect2.width, rect2.height);
+    const pixelsCible = memoCtx.getImageData(0, 0, intersectionW, intersectionH).data;
+
+    for (let i = 3; i < pixelsJoueur.length; i += 4) {
+        if (pixelsJoueur[i] > 0 && pixelsCible[i] > 0) {
+            return true;
+        }
+    }
+
+    return false;
+};
 
 const Sauvegarder = (clef, valeur) => {
     localStorage.setItem(clef, valeur);

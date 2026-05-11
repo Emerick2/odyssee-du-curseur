@@ -25,17 +25,17 @@ function distance(x1, y1, x2, y2) {
     Le 2 ces le joueur.
     */
    y2-=80
-   const décalage = 10;
-   const tailleDeLaScèneDeJeu = 500;
+   const decalage = 10;
+   const tailleDeLaSceneDeJeu = 500;
    let largeurDeLaPage = document.body.offsetWidth;
    largeurDeLaPage /= 2;
         
-   largeurDeLaPage -= (tailleDeLaScèneDeJeu*1.5);
+   largeurDeLaPage -= (tailleDeLaSceneDeJeu*1.5);
     x2+=largeurDeLaPage;
     // console.log(x2);
     // console.log(x2);
    
-   valeurX = ((x1+décalage < x2 || x1-décalage > x2))
+   valeurX = ((x1+decalage < x2 || x1-decalage > x2))
    if (y2-(20) > y1 && !valeurX){
         return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
    }

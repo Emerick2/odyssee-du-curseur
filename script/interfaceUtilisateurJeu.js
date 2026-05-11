@@ -12,7 +12,7 @@ const Rejouer = () => {
     enJeu = true;
 }
 
-const OuvrirMenuDéfaite = () => {
+const OuvrirMenuDefaite = () => {
     enJeu = false;
     panelFin.style.display = "block";
     const body = document.body;
@@ -22,7 +22,7 @@ const OuvrirMenuDéfaite = () => {
     if (boutonRejouer != null && boutonRejouer != undefined) {
         PlacerBoutonJouer();
     }
-    CrééLeNiveau(niveauActuel, scene, Initialiser);
+    CreeLeNiveau(niveauActuel, scene, Initialiser);
 }
 
 let sauvegardeEffectuer = false;
@@ -91,7 +91,7 @@ const Initialiser = () => {
 
 const PlacerBoutonJouer = () => {
     if (boutonRejouer) {
-        boutonRejouer.style.top = Number.parseInt(positionDeDépart.x)+"px";
-        boutonRejouer.style.left = Number.parseInt(positionDeDépart.y)+"px";
+        boutonRejouer.style.top = Number.parseInt(positionDeDepart.x)+"px";
+        boutonRejouer.style.left = Number.parseInt(positionDeDepart.y)+"px";
     }
 }

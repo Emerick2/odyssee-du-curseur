@@ -1,27 +1,24 @@
 window.addEventListener('mousemove', (e) => {
     if (joueur == null) return;
-    const différance = -10;
+    const differance = -10;
     const x = e.pageX;  // / window.innerWidth;
     const y = e.pageY; // / window.innerWidth;
     
-    joueur.style.top = (différance+y)+"px";
-    joueur.style.left = (différance+x)+"px";
+    joueur.style.top = (differance+y)+"px";
+    joueur.style.left = (differance+x)+"px";
 
     
     if (enJeu) {
-        const rectJoueur = joueur.getBoundingClientRect();
         if (mur != null) {
             for (let meteorite of mur) {
-                const rectMeteorite = meteorite.getBoundingClientRect();
-
-                if (EstEnCollision(rectJoueur, rectMeteorite)) {
+                if (EstEnCollision(joueur, meteorite)) {
                     ilFautOuvirLeMenuDeDefaite = true;
                 }
             }
         }
 
         if (gagnerElement != null){
-            if (EstEnCollision(rectJoueur, gagnerElement.getBoundingClientRect())) {
+            if (EstEnCollision(joueur, gagnerElement)) {
                 PasserAuNiveauSuivant();
             }
         }

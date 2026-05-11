@@ -27,7 +27,7 @@ let temps = departMinutes * 60;
 
 // outils :
 const nombreDeNiveauTotal = 5;
-let positionDeDépart = {
+let positionDeDepart = {
     x : 0,
     y : 0,
 }

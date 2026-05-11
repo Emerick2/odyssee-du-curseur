@@ -1,4 +1,4 @@
-const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
+const CreeLeNiveau = async(id, scene, fonctionAAppeller) => {
     const fichier = "/data/"+id+".json";
     const reponse = await fetch(fichier);
     if (!reponse.ok){
@@ -9,8 +9,8 @@ const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
 
     if (donnees["depart"] != null) {
         if (donnees["depart"] != null && donnees["depart"].length >= 1){
-            positionDeDépart.x = donnees["depart"][1];
-            positionDeDépart.y = donnees["depart"][0];
+            positionDeDepart.x = donnees["depart"][1];
+            positionDeDepart.y = donnees["depart"][0];
         }
     }
 
@@ -21,6 +21,8 @@ const CrééLeNiveau = async(id, scene, fonctionAAppeller) => {
     ListePlacerElement(donnees, scene, "coin", "/image/kenney_space-shooter-remastered/PNG/Power-ups/powerupYellow_star.png");
 
     ListePlacerElement(donnees, scene, "spike", "/image/kenney_space-shooter-remastered/PNG/Enemies/enemyBlack1.png");
+
+    ListePlacerElement(donnees, scene, "piqueStatique", "/image/kenney_space-shooter-remastered/PNG/Parts/gun02.png");
 
     fonctionAAppeller();
 }
