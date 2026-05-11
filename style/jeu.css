@@ -78,6 +78,7 @@ h1{
     left: 20px;
     top:20px;
     user-select: none;
+    cursor: pointer;
 }
 
 #boutonMusique:hover{
