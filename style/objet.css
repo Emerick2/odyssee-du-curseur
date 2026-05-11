@@ -1,0 +1,44 @@
+#joueur{
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    width: 40px;
+}
+
+.meteorite{
+    position: absolute;
+    user-select: none;
+    width: 100px;
+    z-index: 2;
+}
+
+.coin{
+    position: absolute;
+    user-select: none;
+    width: 20px;
+    z-index: 2;
+}
+
+.spike{
+    position: absolute;
+    user-select: none;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+}
+
+.piqueStatique{
+    position: absolute;
+    user-select: none;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+}
+
+#gagner{
+    position: absolute;
+    user-select: none;
+    width: 70px;
+    z-index: 2;
+}

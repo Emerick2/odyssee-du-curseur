@@ -1,0 +1,57 @@
+#barreDeNavigation{
+    border: solid 0px;
+    border-right-width: 2px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100vh;
+    width: 13rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    gap:30px;
+    font-size: 1.2rem;
+    background-color: aliceblue;
+    cursor:default;
+    z-index: 10;
+}
+
+#barreDeNavigation a{
+    transition: 0.2s;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    border: solid 0px;
+    width: auto;
+    height: 3rem;
+    background-color: rgb(247, 247, 255);
+    columns: black;
+    text-decoration: none;
+    font-family: kenvector_future_thin;
+}
+
+#barreDeNavigation a:hover{
+    transition: 0.2s;
+    background-color: rgb(220, 220, 255);
+}
+
+#barreDeNavigation a:active{
+    transition: 0.2s;
+    background-color: rgb(215, 215, 218);
+}
+
+#timer, #score{
+    font-family: kenvector_future_thin;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 0;
+}
+
+#score{
+    font-size: 1rem;
+}
+
+#score::before{
+    content: "score : ";
+}
