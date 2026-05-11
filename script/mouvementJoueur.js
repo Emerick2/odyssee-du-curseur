@@ -9,6 +9,13 @@ window.addEventListener('mousemove', (e) => {
 
     
     if (enJeu) {
+        if (scene != null){
+            if (!EstEnCollisionSimple(joueur, scene)){
+                ilFautOuvirLeMenuDeDefaite = true;
+                return;
+            }
+        }
+
         if (mur != null) {
             for (let meteorite of mur) {
                 if (EstEnCollision(joueur, meteorite)) {
