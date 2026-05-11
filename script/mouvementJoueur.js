@@ -1,8 +1,8 @@
 window.addEventListener('mousemove', (e) => {
     if (joueur == null) return;
     const differance = -10;
-    const x = e.pageX;  // / window.innerWidth;
-    const y = e.pageY; // / window.innerWidth;
+    const x = e.pageX;
+    const y = e.pageY;
     
     joueur.style.top = (differance+y)+"px";
     joueur.style.left = (differance+x)+"px";

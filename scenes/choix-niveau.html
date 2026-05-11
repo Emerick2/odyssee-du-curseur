@@ -18,11 +18,20 @@
                 <p class="texteTemps"></p>
             </a>
         </template>
-        <h1 class="titre-partie">Quel niveau shouaitez-vous réaliser ?</h1>
-        <div id="liste-niveau">
-        </div>
-        <div id="liste-boutons">
-            <button class="boutonReinitialiser" onclick="BoutonReinitialiser()">Réinitialiser la sauvegarde</button>
-        </div>
+
+        <main>
+            <h1 class="titre-partie">Quel niveau shouaitez-vous réaliser ?</h1>
+            <div id="liste-niveau">
+            </div>
+            <div id="liste-boutons">
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/choix-niveau.html')">JOUER</button>
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/credits.html')">CRÉDITS</button>
+                <button class="boutonReinitialiser" onclick="BoutonReinitialiser()">Réinitialiser la sauvegarde</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>L’Odyssée du Curseur - 2026</p>
+        </footer>
     </body>
 </html>

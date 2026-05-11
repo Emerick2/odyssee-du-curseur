@@ -7,7 +7,3 @@ function playCoinSound() {
     const sound = new Audio("pickupCoin.wav");
 }
 
-// createCoin(200, 200);
-// createCoin(400, 300);
-// createCoin(700, 150);
-
