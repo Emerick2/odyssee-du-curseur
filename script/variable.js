@@ -10,6 +10,7 @@ const scene = document.getElementById("scenneDuJeu");
 
 const joueur = document.getElementById("joueur");
 let mur = Array.from(document.querySelectorAll('.meteorite'));
+let listePiqueStatique = Array.from(document.querySelectorAll(".piqueStatique"));
 let gagnerElement = document.getElementById("gagner");
 const panelFin = document.getElementById("fondPerdu");
 const boutonRejouer = document.getElementById("boutonJouer");
@@ -36,7 +37,8 @@ const lesTaille = {
     "meteorite":100,
     "gagner":70,
     "coin":20,
-    "spike":20
+    "spike":20,
+    "piqueStatique":30
 }
 
 const autoriserLeScorll = false;

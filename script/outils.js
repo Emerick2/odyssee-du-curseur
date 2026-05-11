@@ -15,7 +15,7 @@ const EstEnCollision = (joueur, elementCible) => {
     const intersectionW = Math.min(rect1.right, rect2.right) - intersectionX;
     const intersectionH = Math.min(rect1.bottom, rect2.bottom) - intersectionY;
 
-    if (intersectionW <= 0 || intersectionH <= 0) return false;
+    if (intersectionW <= 0 || intersectionH <= 0 || intersectionW == null || intersectionH == null) return false;
 
     memoCanvas.width = intersectionW;
     memoCanvas.height = intersectionH;

@@ -13,6 +13,15 @@ window.addEventListener('mousemove', (e) => {
             for (let meteorite of mur) {
                 if (EstEnCollision(joueur, meteorite)) {
                     ilFautOuvirLeMenuDeDefaite = true;
+                    return;
+                }
+            }
+        }
+        if (listePiqueStatique != null){
+            for (let piqueStatiqueObjet of listePiqueStatique) {
+                if (EstEnCollision(joueur, piqueStatiqueObjet)) {
+                    ilFautOuvirLeMenuDeDefaite = true;
+                    return;
                 }
             }
         }

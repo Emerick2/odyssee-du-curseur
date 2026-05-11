@@ -85,6 +85,7 @@ const Initialiser = () => {
     document.body.offsetHeight;
 
     mur = Array.from(document.querySelectorAll('.meteorite'));
+    listePiqueStatique  = Array.from(document.querySelectorAll('.piqueStatique'));
     gagnerElement = document.getElementById("gagner");
     spikeData = InitialiserSpike();
 }
