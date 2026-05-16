@@ -52,7 +52,8 @@ if (scene == null || joueur == null){
 
 // spickes :
 let spikes = document.querySelectorAll(".spike");
-const spikeSpeed = 0.3;
+const spikeSpeed = 0.5;
+const hauteurDetectionSpike = 300;
 const spikePositions = [];
 //{ x: 100, y: 0 },
 
