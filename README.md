@@ -7,3 +7,7 @@ Liste des données de sauvegardes concerver :
 - niveauActuel+"_score"
 - niveauActuel+"_temps"
 - niveauActuel+"_tentative"
+
+# Lancer le serveur :
+- `python -m http.server 8080 --bind 0.0.0.0`
+- Aller sur : http://localhost:8080/scenes/menu.html
