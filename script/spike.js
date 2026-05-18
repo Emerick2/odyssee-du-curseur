@@ -4,6 +4,8 @@ const InitialiserSpike = () => {
         el,
         x: spikePositions[i].x,
         y: spikePositions[i].y,
+        xDepart: spikePositions[i].x,
+        yDepart: spikePositions[i].y,
         active: false,
         speed: spikeSpeed
     }));

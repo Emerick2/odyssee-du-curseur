@@ -31,7 +31,12 @@ function gameLoop() {
             }
 
             if (s.active) {
-                s.y += s.speed;
+                if (s.y > 600) {
+                    s.y = s.yDepart;
+                    s.active = false;
+                } else {
+                    s.y += s.speed;
+                }
 
                 s.el.style.top = s.y + "px";
 
