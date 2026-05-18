@@ -45,6 +45,12 @@ function gameLoop() {
                 JouerSongCoup(0);
             }
         });
+
+        listeDesLaser.forEach(s => {
+            // console.log("ici");
+            s.style.top = s.style.top+50+ "px";
+            s.style.left = s.style.left+50+ "px";
+        });
     }
     if (ilFautOuvirLeMenuDeDefaite){
         secondes = 0;

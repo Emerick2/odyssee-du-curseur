@@ -48,6 +48,7 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 ├──┼──outils.js                     # Script qui contient plusieurs fonctions utilitaire utile dans les différentes page du site comme la détection de collision et le changement de page notamment.
 ├──┼──score.js                      # Gestion des pièces du jeu.
 ├──┼──spike.js                      # Gestion des piques dynamique du jeu.
+├──┼──fonctionnementLivre.js        # Script qui permet la navigation dans le livre sur la page d'accueil.
 ├──┴──timer.js                      # Gestion du temps dans le jeux.
 │
 ├─style

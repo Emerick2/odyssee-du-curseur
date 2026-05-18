@@ -42,3 +42,7 @@
     width: 70px;
     z-index: 2;
 }
+
+.laser{
+    position: absolute;
+}
