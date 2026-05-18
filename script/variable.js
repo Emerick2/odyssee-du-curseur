@@ -66,3 +66,4 @@ let ilFautOuvirLeMenuDeDefaite = true;
 let musiqueAutoriser = true;
 const musiqueDeFond = "/musique/musique-de-fond.mp3";
 let audioFond = new Audio(musiqueDeFond);
+audioFond.volume = 0.8;
