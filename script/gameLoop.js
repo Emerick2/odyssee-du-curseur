@@ -47,6 +47,7 @@ function gameLoop() {
         });
     }
     if (ilFautOuvirLeMenuDeDefaite){
+        secondes = 0;
         ilFautOuvirLeMenuDeDefaite = false;
     }
 
