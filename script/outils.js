@@ -6,6 +6,24 @@ const OuvrirUneNouvellePage = (nomDeLaPage) => {
     window.location.href = nomDeLaPage;
 }
 
+const EstEnCollisionSimple = (joueur, elementCible) => {
+    const rect1 = joueur.getBoundingClientRect();
+    const rect2 = elementCible.getBoundingClientRect();
+
+    const intersectionX = Math.max(rect1.left, rect2.left);
+    const intersectionY = Math.max(rect1.top, rect2.top);
+    const intersectionW = Math.min(rect1.right, rect2.right) - intersectionX;
+    const intersectionH = Math.min(rect1.bottom, rect2.bottom) - intersectionY;
+
+    // if (intersectionW <= 0 || intersectionH <= 0 || intersectionW == null || intersectionH == null) return false;
+    
+    if (intersectionW <= 1 || intersectionH <= 1) return false;
+    if (intersectionW == null || intersectionH == null) return true;
+
+    return true;
+
+}
+
 const EstEnCollision = (joueur, elementCible) => {
     const rect1 = joueur.getBoundingClientRect();
     const rect2 = elementCible.getBoundingClientRect();
@@ -15,13 +33,18 @@ const EstEnCollision = (joueur, elementCible) => {
     const intersectionW = Math.min(rect1.right, rect2.right) - intersectionX;
     const intersectionH = Math.min(rect1.bottom, rect2.bottom) - intersectionY;
 
-    if (intersectionW <= 0 || intersectionH <= 0 || intersectionW == null || intersectionH == null) return false;
+    // if (intersectionW <= 0 || intersectionH <= 0 || intersectionW == null || intersectionH == null) return false;
+    if (intersectionW <= 1 || intersectionH <= 1) return false;
+    if (intersectionW == null || intersectionH == null) return true;
 
     memoCanvas.width = intersectionW;
     memoCanvas.height = intersectionH;
 
     memoCtx.clearRect(0, 0, intersectionW, intersectionH);
     memoCtx.drawImage(joueur, rect1.left - intersectionX, rect1.top - intersectionY, rect1.width, rect1.height);
+    
+    if (memoCtx == null || memoCtx == 0) return true;
+
     const pixelsJoueur = memoCtx.getImageData(0, 0, intersectionW, intersectionH).data;
 
     memoCtx.clearRect(0, 0, intersectionW, intersectionH);

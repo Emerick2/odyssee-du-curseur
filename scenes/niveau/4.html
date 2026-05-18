@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta charset="UTF-8">
         <title>Niveau 4 | L'odyssée du Curseur</title>
+        <link rel="stylesheet" href="/style/menu.css">
         <link rel="stylesheet" href="/style/jeu.css">
         <link rel="stylesheet" href="/style/barreDeNavigation.css">
         <link rel="stylesheet" href="/style/panelDeFin.css">
@@ -19,9 +21,11 @@
     <body>
         <div id="fondPerdu">
             <div class="scenneDuJeuDimansion">
+                <button id="boutonMaison" onclick="OuvrirUneNouvellePage('/scenes/menu.html')">🏠</button>
                 <button id="boutonJouer" onclick="Rejouer()">Jouer</button>
             </div>
         </div>
+        <button onclick="ModifierStatusMusique()" id="boutonMusique" class="boutonMusiqueActif">♫</button>
         <h1>L’Odyssée du Curseur</h1>
         <div id="scenneDuJeu">
         </div>
@@ -35,7 +39,11 @@
                 <img class="imageEtoile" id="imageEtoile1" alt="image de l'étoile N°1" src="/image/kenney_space-shooter-remastered/PNG/Power-ups/star_gold.png"/>
                 <img class="imageEtoile" id="imageEtoile2" alt="image de l'étoile N°2" src="/image/kenney_space-shooter-remastered/PNG/Power-ups/star_gold.png"/>
                 <img class="imageEtoile" id="imageEtoile3" alt="image de l'étoile N°3" src="/image/kenney_space-shooter-remastered/PNG/Power-ups/star_gold.png"/>
+            </div>
+            <div id="liste-boutons">
                 <button id="boutonNiveauSuivant" class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/choix-niveau.html')">CONTINUER</button>
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/menu.html')">ACCUEIL</button>
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/credits.html')">CRÉDITS</button>
             </div>
         </div>
     </body>

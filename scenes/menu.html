@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta charset="UTF-8">
         <title>Menu | L'odyssée du Curseur</title>
         <link rel="stylesheet" href="/style/jeu.css">
         <link rel="stylesheet" href="/style/menu.css">
@@ -8,12 +9,20 @@
         <script defer src="/script/outils.js"></script>
     </head>
     <body>
-        <br>
-        <h1 class="titre-partie">L’Odyssée du Curseur</h1>
-        <div id="liste-boutons">
-            <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/choix-niveau.html')">JOUER</button>
-                        <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/regles.html')">règles</button>
-            <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/credits.html')">CRÉDITS</button>
-        </div>
+
+       <main>
+            <br>
+            <h1 class="titre-partie">L’Odyssée du Curseur</h1>
+            <img class="iconeDuJeu" src="" alt="logo du jeu"/>
+            <div id="liste-boutons">
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/choix-niveau.html')">JOUER</button>
+                                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/regles.html')">Règles</button>
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/credits.html')">CRÉDITS</button>
+            </div>
+        </main>
+        <footer>
+            <p>L’Odyssée du Curseur - 2026</p>
+        </footer>e6ae560ece7dc84dfaf94a671f4c46
     </body>
+
 </html>

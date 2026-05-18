@@ -27,7 +27,7 @@ let temps = departMinutes * 60;
 
 
 // outils :
-const nombreDeNiveauTotal = 5;
+const nombreDeNiveauTotal = 10;
 let positionDeDepart = {
     x : 0,
     y : 0,
@@ -52,7 +52,8 @@ if (scene == null || joueur == null){
 
 // spickes :
 let spikes = document.querySelectorAll(".spike");
-const spikeSpeed = 0.3;
+const spikeSpeed = 0.5;
+const hauteurDetectionSpike = 300;
 const spikePositions = [];
 //{ x: 100, y: 0 },
 
@@ -60,3 +61,9 @@ const spikePositions = [];
 let secondes = 0;
 
 let ilFautOuvirLeMenuDeDefaite = true;
+
+// musique :
+let musiqueAutoriser = true;
+const musiqueDeFond = "/musique/musique-de-fond.mp3";
+let audioFond = new Audio(musiqueDeFond);
+audioFond.volume = 0.8;

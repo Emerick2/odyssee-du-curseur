@@ -48,7 +48,9 @@
     right:0px;
 }
 
-#panelDeFin .boutonViolet{
+#panelDeFin #liste-boutons{
     position: absolute;
-    top:200px;
+    top:300px;
+    border: solid 0px;
+    gap:30px;
 }

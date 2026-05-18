@@ -25,6 +25,7 @@ const CreeLeNiveau = async(id, scene, fonctionAAppeller) => {
     ListePlacerElement(donnees, scene, "piqueStatique", "/image/kenney_space-shooter-remastered/PNG/Parts/gun02.png");
 
     fonctionAAppeller();
+    gameLoop();
 }
 
 const ListePlacerElement = (donnees, scene, recherche, src) => {

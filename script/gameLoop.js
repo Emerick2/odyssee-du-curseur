@@ -1,7 +1,11 @@
 function gameLoop() {
     if (enJeu) {
         const joueurRect = joueur.getBoundingClientRect();
-        
+        const sceneRect = scene.getBoundingClientRect();
+
+        const joueurXDansScene = joueurRect.left - sceneRect.left;
+        const joueurYDansScene = joueurRect.top - sceneRect.top;
+
         for (let i = coins.length - 1; i >= 0; i--) {
             if (EstEnCollision(joueur, coins[i])) {
                 playCoinSound();
@@ -18,17 +22,21 @@ function gameLoop() {
             const dist = distance(
                 s.x,
                 s.y,
-                joueurRect.left,
-                joueurRect.top
+                joueurXDansScene,
+                joueurYDansScene,
             );
 
-            if (dist < 175) {
+            if (dist < hauteurDetectionSpike) {
                 s.active = true;
             }
 
             if (s.active) {
-                s.speed += 0.4;
-                s.y += s.speed;
+                if (s.y > 600) {
+                    s.y = s.yDepart;
+                    s.active = false;
+                } else {
+                    s.y += s.speed;
+                }
 
                 s.el.style.top = s.y + "px";
 
@@ -52,4 +60,3 @@ function gameLoop() {
 
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();
 CreeLeNiveau(niveauActuel, scene, Initialiser);
-gameLoop();
