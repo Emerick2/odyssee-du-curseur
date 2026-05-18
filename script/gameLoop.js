@@ -47,9 +47,17 @@ function gameLoop() {
         });
 
         listeDesLaser.forEach(s => {
-            // console.log("ici");
-            s.style.top = s.style.top+50+ "px";
-            s.style.left = s.style.left+50+ "px";
+            let vitesse = 2
+            s.style.top = parseInt(s.style.top.replace("px",""))+vitesse+ "px";
+            s.style.left = parseInt(s.style.left.replace("px",""))+vitesse+ "px";
+
+            listePiquesStatique.forEach(o => {
+                if (EstEnCollision(s,o)){
+                    console.log("TOUCHER !");
+                    Element.remove(s);
+                    Element.remove(o);
+                }
+            });
         });
     }
     if (ilFautOuvirLeMenuDeDefaite){

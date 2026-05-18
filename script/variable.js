@@ -85,3 +85,5 @@ const JouerSongCoup = (type = 0) => {
     musiqueDeFond.play()
     OuvrirMenuDefaite();
 }
+
+const listePiquesStatique = []

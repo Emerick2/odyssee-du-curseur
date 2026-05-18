@@ -43,6 +43,8 @@ const ListePlacerElement = (donnees, scene, recherche, src) => {
                     objet.x = elem[0];
                     objet.y = elem[1];
                     spikePositions.push(objet);
+                } else if (recherche == "piqueStatique") {
+                    listePiquesStatique.push(nouvelObjet);
                 }
             }
         }
