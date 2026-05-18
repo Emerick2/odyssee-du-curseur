@@ -1,12 +1,5 @@
-@font-face {
-    font-family : kenvector_future;
-    src: url(/image/kenney_space-shooter-remastered/Bonus/kenvector_future.ttf);
-}
-
-@font-face {
-    font-family : kenvector_future_thin;
-    src: url(/image/kenney_space-shooter-remastered/Bonus/kenvector_future_thin.ttf);
-}
+@import "police.css";
+@import "objet.css";
 
 body{
     display: flex;
@@ -15,8 +8,8 @@ body{
     flex-direction: column;
     margin: 0;
     overflow-x : hidden;
-    overflow-y :scroll;
-    /* hidden */
+    overflow-y :hidden;
+    background-color: rgb(238, 225, 255);
 }
 
 h1{
@@ -25,42 +18,42 @@ h1{
 
 
 #scenneDuJeu{
-    position: relative;
+    z-index: -20;
+    top:80px;
+    position: absolute;
     width: 500px;
     aspect-ratio: 1/1;
     border: solid;
     border-radius: 12px;
-    background-color: rgb(239, 239, 239);
-}
-
-#joueur{
-    position: absolute;
-    user-select: none;
-    pointer-events: none;
-    position: absolute;
-    width: 40px;
-    left:30px;
-}
-
-.meteorite{
-    position: absolute;
-    width: 100px;
-    z-index: 2;
+    background-image: url(/image/fond-du-jeu.png);
+    /* filter: brightness(200%); */
+    /* filter:invert(); */
+    margin-bottom: 100px;
 }
 
 /* ------------- */
 
 #fondPerdu{
-    position: static;
-    background-color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.519);
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-items: center;
+    padding-top: 80px;
+}
+
+.scenneDuJeuDimansion{
+    z-index: 0;
+    position: relative;
+    width: 500px;
+    aspect-ratio: 1/1;
+    border: solid 0px;
+    border-radius: 12px;
+    margin-bottom: 100px;
 }
 
 #boutonJouer{
     position: absolute;
-    /* top:100px; */
-    /* left: 500px; */
     width: 80px;
     height: 80px;
     border: solid 2px;
@@ -69,14 +62,79 @@ h1{
 }
 
 #boutonJouer:hover{
-    z-index: 2;
     background-color: aqua;
+    cursor:none;
+}
+
+#boutonMusique{
+    transition: 0.2s;
+    background-color: rgb(255, 230, 250);
+    border: solid rgb(209, 125, 125) 1.5px;
+    box-shadow: 2px 2px rgb(209, 125, 125);
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 20px;
+    top:20px;
+    user-select: none;
     cursor: pointer;
 }
 
-#gagner{
+#boutonMusique:hover{
+    transition: 0.2s;
+    background-color: rgb(255, 195, 243);
+    box-shadow: 1px 1px rgb(209, 125, 125);
+    transform: translateX(1px) translateY(1px);
+}
+
+#boutonMusique:active{
+    transition: 0.2s;
+    background-color: rgb(255, 164, 237);
+    box-shadow: 0px 0px rgb(209, 125, 125);
+    transform: translateX(2px) translateY(2px);
+}
+
+.boutonMusiqueActif{
+    background-color: rgb(225, 255, 195) !important;
+    border-color: rgb(136, 209, 125) !important;
+    box-shadow: 1px 1px rgb(136, 209, 125) !important;
+}
+
+.boutonMusiqueActif:hover{
+    background-color: rgb(199, 237, 160) !important;
+    border-color: rgb(136, 209, 125) !important;
+    box-shadow: 1px 1px rgb(136, 209, 125) !important;
+}
+
+.boutonMusiqueActif:active{
+    background-color: rgb(180, 245, 115) !important;
+    border-color: rgb(136, 209, 125) !important;
+    box-shadow: 1px 1px rgb(136, 209, 125) !important;
+}
+
+#boutonMaison{
+    transition: 0.2s;
+    background-color: white;
     position: absolute;
-    top:0px;
-    width: 70px;
-    z-index: 2;
+    top:-65px;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 25px;
+    border: solid 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+
+#boutonMaison:hover{
+    transition: 0.2s;
+    background-color: rgb(232, 232, 232);
+}
+
+#boutonMaison:active{
+    transition: 0.2s;
+    background-color: rgb(196, 196, 196);
 }

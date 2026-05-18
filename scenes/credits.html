@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta charset="UTF-8">
         <title>Crédits | L'odyssée du Curseur</title>
         <link rel="stylesheet" href="/style/jeu.css">
-        <script defer src="/script/outils.js"></script>
         <link rel="stylesheet" href="/style/menu.css">
+        <link rel="stylesheet" href="/style/bouton.css">
+        <script defer src="/script/outils.js"></script>
     </head>
     <body>
-        <h1>Se jeu a été réalisé par :</h1>
-        <ul>
-            <li>Emerick</li>
-            <li>Gabor</li>
-            <li>Jules</li>
-        </ul>
-        <div id="liste-boutons">
-            <button onclick="OuvrirUneNouvellePage('/scenes/menu.html')">ACCUEIL</button>
-        </div>
+        <main>
+            <h1 class="titre-partie">Les crédits</h1>
+
+            <div class="partie-de-credits">
+                <h2 class="titre-sous-partie">Développeurs du jeu</h2>
+                <ul>
+                    <li><a href="https://github.com/Emerick2" target="_blank">Emerick</a></li>
+                    <li><a href="https://github.com/Gabor105" target="_blank">Gabor</a></li>
+                    <li><a href="https://github.com/NardenLaSouris" target="_blank">Jules</a></li>
+                </ul>
+            </div>
+
+            <div class="partie-de-credits">
+                <h2 class="titre-sous-partie">Ressources visuels</h2>
+                <ul>
+                    <li><a href="https://kenney.nl/assets/space-shooter-remastered" target="_blank">kenney.nl</a></li>
+                    <li><a href="https://fr.pikbest.com/templates/starry-galaxy-night-sky-light-halo-background_6593818.html" target="_blank">pikbest.com</a></li>
+                </ul>
+            </div>
+
+            <div class="partie-de-credits">
+                <h2 class="titre-sous-partie">Ressources sonores</h2>
+                <ul>
+                    <li><a href="https://sfxr.me/" target="_blank">sfxr.me</a></li>
+                    <li><a href="https://pixabay.com/fr/music/search/8bit/" target="_blank">pixabay.com</a></li>
+                </ul>
+            </div>
+            
+            <div id="liste-boutons">
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/menu.html')">ACCUEIL</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>L’Odyssée du Curseur - 2026</p>
+        </footer>
     </body>
 </html>

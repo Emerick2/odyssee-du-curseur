@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta charset="UTF-8">
         <title>Choix du niveau | L'odyssée du Curseur</title>
         <link rel="stylesheet" href="/style/jeu.css">
+        <link rel="stylesheet" href="/style/menu.css">
+        <link rel="stylesheet" href="/style/bouton.css">
         <link rel="stylesheet" href="/style/choix-niveau.css">
+        <script defer src="/script/variable.js"></script>
         <script defer src="/script/outils.js"></script>
         <script defer src="/script/choix-niveau.js"></script>
     </head>
     <body>
         <template id="template-block-niveau">
-            <a class="lienA" href="/scenes/niveau/1.html">1</a>
+            <a class="lienA">
+                <p class="texteNomNiveau">1</p>
+                <p class="textePiece"></p>
+                <p class="texteTemps"></p>
+            </a>
         </template>
-        <h1>Quel niveau shouaitez-vous réaliser ?</h1>
-        <div id="liste-niveau">
-        </div>
+
+        <main>
+            <h1 class="titre-partie">Quel niveau shouaitez-vous réaliser ?</h1>
+            <div id="liste-niveau">
+            </div>
+            <div id="liste-boutons">
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/menu.html')">ACCEUIL</button>
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/credits.html')">CRÉDITS</button>
+                <button class="boutonReinitialiser" onclick="BoutonReinitialiser()">Réinitialiser la sauvegarde</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>L’Odyssée du Curseur - 2026</p>
+        </footer>
     </body>
 </html>

@@ -6,16 +6,17 @@ body{
 
 #liste-niveau{
     display: flex;
+    justify-self: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap:20px;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     max-width: 800px;
 }
 
-#liste-niveau a{
+.lienA{
     transition: 0.2s;
     position: relative;
     display: flex;
@@ -31,14 +32,49 @@ body{
     background-color: rgb(228, 230, 255);
     border-color: black;
     color: black;
+
+    padding-top: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
 }
 
-#liste-niveau a:hover{
+.lienA:hover{
     transition: 0.2s;
     background-color: rgb(242, 243, 255);
 }
 
-#liste-niveau a:active{
+.lienA:active{
     transition: 0.2s;
     background-color: rgb(211, 211, 212);
+}
+
+.textePiece, .texteTemps{
+    position: absolute;
+    font-size: 0.8rem;   
+}
+
+.lienABloquer, .lienABloquer:hover, .lienABloquer:active {
+    background-color: rgb(181, 181, 181);
+    cursor: default;
+}
+
+.textePiece{
+    top:-0.7rem;
+}
+.texteTemps{
+    top:0.4rem;
+}
+
+.textePiece::before{
+    content: "⭐";
+}
+
+.texteTemps::before{
+    content: "⏱️";
+}
+
+
+.cacherStatistiques .textePiece::before, .cacherStatistiques .texteTemps::before{
+    content: "";
 }
