@@ -37,6 +37,7 @@ h1{
     height: 100vh;
     display: flex;
     justify-items: center;
+    justify-content: center;
     padding-top: 80px;
 }
 
