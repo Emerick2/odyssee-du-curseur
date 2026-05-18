@@ -13,6 +13,7 @@ window.addEventListener('mousemove', (e) => {
         if (scene != null){
             if (!EstEnCollisionSimple(joueur, scene)){
                 ilFautOuvirLeMenuDeDefaite = true;
+                JouerSongCoup();
                 return;
             }
         }
@@ -21,6 +22,7 @@ window.addEventListener('mousemove', (e) => {
             for (let meteorite of mur) {
                 if (EstEnCollision(joueur, meteorite)) {
                     ilFautOuvirLeMenuDeDefaite = true;
+                    JouerSongCoup();
                     return;
                 }
             }
@@ -29,6 +31,7 @@ window.addEventListener('mousemove', (e) => {
             for (let piqueStatiqueObjet of listePiqueStatique) {
                 if (EstEnCollision(joueur, piqueStatiqueObjet)) {
                     ilFautOuvirLeMenuDeDefaite = true;
+                    JouerSongCoup();
                     return;
                 }
             }

@@ -22,6 +22,8 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 │
 ├─musique
 ├──┬──musique-de-fond.mp3           # Musique d'ambiance du jeu.
+├──┼──coup.wav                      # Musique de dégâ du jeu.
+
 ├──┴──pickupCoin.wav                # Musique jouer quand une pièce est récupéré.
 │
 ├─scenes
