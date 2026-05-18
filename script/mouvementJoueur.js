@@ -13,7 +13,7 @@ window.addEventListener('mousemove', (e) => {
         if (scene != null){
             if (!EstEnCollisionSimple(joueur, scene)){
                 ilFautOuvirLeMenuDeDefaite = true;
-                JouerSongCoup();
+                JouerSongCoup(1);
                 return;
             }
         }
@@ -22,7 +22,7 @@ window.addEventListener('mousemove', (e) => {
             for (let meteorite of mur) {
                 if (EstEnCollision(joueur, meteorite)) {
                     ilFautOuvirLeMenuDeDefaite = true;
-                    JouerSongCoup();
+                    JouerSongCoup(0);
                     return;
                 }
             }
@@ -31,7 +31,7 @@ window.addEventListener('mousemove', (e) => {
             for (let piqueStatiqueObjet of listePiqueStatique) {
                 if (EstEnCollision(joueur, piqueStatiqueObjet)) {
                     ilFautOuvirLeMenuDeDefaite = true;
-                    JouerSongCoup();
+                    JouerSongCoup(0);
                     return;
                 }
             }
@@ -39,6 +39,7 @@ window.addEventListener('mousemove', (e) => {
 
         if (gagnerElement != null){
             if (EstEnCollision(joueur, gagnerElement)) {
+                JouerSongCoup(2);
                 PasserAuNiveauSuivant();
             }
         }
@@ -75,17 +76,5 @@ const RotationJoueur = (x, y) => {
 window.addEventListener('keydown', (event) => {
     if (enJeu){
         const key = event.key;
-        // if (key === 'e') {
-        //     PasserAuNiveauSuivant();
-        // }
     }
 });
-
-
-
-
-
-
-
-
-

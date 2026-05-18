@@ -89,7 +89,6 @@ const PasserAuNiveauSuivant = () => {
 
 const Initialiser = () => {
     PlacerBoutonJouer();
-    // window.location.reload();
     document.body.offsetHeight;
 
     mur = Array.from(document.querySelectorAll('.meteorite'));

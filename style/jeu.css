@@ -26,8 +26,6 @@ h1{
     border: solid;
     border-radius: 12px;
     background-image: url(/image/fond-du-jeu.png);
-    /* filter: brightness(200%); */
-    /* filter:invert(); */
     margin-bottom: 100px;
 }
 

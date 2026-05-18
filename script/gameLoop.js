@@ -42,7 +42,7 @@ function gameLoop() {
             }
             if (EstEnCollision(joueur, s.el)) {
                 ilFautOuvirLeMenuDeDefaite = true;
-                JouerSongCoup();
+                JouerSongCoup(0);
             }
         });
     }
