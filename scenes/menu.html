@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/style/menu.css">
         <link rel="stylesheet" href="/style/bouton.css">
         <script defer src="/script/outils.js"></script>
+        <script defer src="/script/fonctionnementLivre.js"></script>
     </head>
     <body>
         <main>
@@ -16,6 +17,15 @@
             <div id="liste-boutons">
                 <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/choix-niveau.html')">JOUER</button>
                 <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/credits.html')">CRÉDITS</button>
+            </div>
+
+
+            <div class="panel-livre">
+                <img id="panel-livre-img" src="a"/>
+                <h3 id="panel-livre-nom">Le nom</h3>
+                <p id="panel-livre-description">Mini description aaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa</p>
+                <button class="panel-livre-btn" id="panel-livre-btn-1" onclick="OuvrirUnePageDuLivre(-1)">←</button>
+                <button class="panel-livre-btn" id="panel-livre-btn-2" onclick="OuvrirUnePageDuLivre(1)">→</button>
             </div>
         </main>
         <footer>
