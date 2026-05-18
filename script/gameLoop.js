@@ -39,21 +39,20 @@ function gameLoop() {
                 }
 
                 s.el.style.top = s.y + "px";
-
-                if (EstEnCollision(joueur, s.el)) {
-                    ilFautOuvirLeMenuDeDefaite = true;
-                }
+            }
+            if (EstEnCollision(joueur, s.el)) {
+                ilFautOuvirLeMenuDeDefaite = true;
+                JouerSongCoup(0);
             }
         });
     }
     if (ilFautOuvirLeMenuDeDefaite){
+        secondes = 0;
         ilFautOuvirLeMenuDeDefaite = false;
-        OuvrirMenuDefaite();
     }
 
     requestAnimationFrame(gameLoop);
 }
-
 
 
 

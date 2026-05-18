@@ -64,8 +64,6 @@ const AjouterElement = (x, y, alt, src) => {
 const PlacerElement = (x, y, nouvelElement, alt) => {
     const maxXY = 500;
 
-    // const largeur = nouvelElement.offsetWidth || parseFloat(nouvelElement.style.width) || 0;
-    // const hauteur = nouvelElement.offsetHeight || parseFloat(nouvelElement.style.height) || 0;
     const largeur = lesTaille[alt] || 0
     const hauteur = lesTaille[alt] || 0
 

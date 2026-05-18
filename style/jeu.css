@@ -26,8 +26,6 @@ h1{
     border: solid;
     border-radius: 12px;
     background-image: url(/image/fond-du-jeu.png);
-    /* filter: brightness(200%); */
-    /* filter:invert(); */
     margin-bottom: 100px;
 }
 
@@ -39,6 +37,7 @@ h1{
     height: 100vh;
     display: flex;
     justify-items: center;
+    justify-content: center;
     padding-top: 80px;
 }
 
@@ -137,4 +136,30 @@ h1{
 #boutonMaison:active{
     transition: 0.2s;
     background-color: rgb(196, 196, 196);
+}
+
+#chronometrePanel{
+    border: solid 0px;
+    width: 6rem;
+    height: 3rem;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: kenvector_future_thin;
+}
+
+#chronometrePanel::before{
+    content: '⏱️';
+    position: absolute;
+    font-size: 1.3rem;
+    left: -2rem;
+}
+
+@media(max-width:800px) {
+    #chronometrePanel{
+        display: none;
+    }
 }
