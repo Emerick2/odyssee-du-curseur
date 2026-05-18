@@ -50,6 +50,12 @@ if (scene == null || joueur == null){
     console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
 }
 
+let xPlayer = 0;
+let yPlayer = 0;
+
+let playerRotation = 0;
+const listeDesLaser = [];
+
 // spickes :
 let spikes = document.querySelectorAll(".spike");
 const spikeSpeed = 0.5;
