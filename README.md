@@ -5,6 +5,11 @@ Pour rendre le jeu plus intéressant, le joueur aura également la possibilité 
 Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une page de sélection du niveau et un minimum de trois niveaux dont la difficulté sera croissante de niveau en niveau pour mettre au défi les joueurs qui shouaiteront essayer notre jeu.
 
 # Lancer le serveur :
+### Avec JavaScript
+- `npx http-server`
+- Aller sur l"un des liens indiqués dans le terminal.
+
+### Avec Python
 - `python -m http.server 8080 --bind 0.0.0.0`
 - Aller sur : http://localhost:8080/scenes/menu.html
 

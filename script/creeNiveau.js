@@ -5,6 +5,7 @@ const CreeLeNiveau = async(id, scene, fonctionAAppeller) => {
         throw new Error("Fichier non trouvé");
         OuvrirUneNouvellePage("/scenes/menu.html");
     }
+    scene.innerHTML = "";
     const donnees = await reponse.json();
 
     if (donnees["depart"] != null) {
@@ -45,6 +46,8 @@ const ListePlacerElement = (donnees, scene, recherche, src) => {
                     spikePositions.push(objet);
                 } else if (recherche == "piqueStatique") {
                     listePiquesStatique.push(nouvelObjet);
+                } else if (recherche == "meteorite") {
+                    listeMeteorite.push(nouvelObjet);
                 }
             }
         }

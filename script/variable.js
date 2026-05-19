@@ -87,3 +87,4 @@ const JouerSongCoup = (type = 0) => {
 }
 
 const listePiquesStatique = []
+const listeMeteorite = []

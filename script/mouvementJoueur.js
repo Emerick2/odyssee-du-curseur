@@ -89,7 +89,7 @@ window.addEventListener('keydown', (event) => {
         laser.style.left = (differance+xPlayer)+"px";
         
         laser.style.transform = `rotate(${playerRotation}deg)`;
-
+        laser.dataset.angle = playerRotation-90;
         listeDesLaser.push(laser);
         document.body.append(laser);
     }

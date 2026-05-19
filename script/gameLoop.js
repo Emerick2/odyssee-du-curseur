@@ -47,17 +47,47 @@ function gameLoop() {
         });
 
         listeDesLaser.forEach(s => {
-            let vitesse = 2
-            s.style.top = parseInt(s.style.top.replace("px",""))+vitesse+ "px";
-            s.style.left = parseInt(s.style.left.replace("px",""))+vitesse+ "px";
+            let vitesse = 5;
 
-            listePiquesStatique.forEach(o => {
-                if (EstEnCollision(s,o)){
-                    console.log("TOUCHER !");
-                    Element.remove(s);
-                    Element.remove(o);
-                }
-            });
+            if (!s.dataset.x) {
+                s.dataset.x = parseFloat(s.style.left) || 0;
+                s.dataset.y = parseFloat(s.style.top) || 0;
+            }
+
+            let actuelX = parseFloat(s.dataset.x);
+            let actuelY = parseFloat(s.dataset.y);
+            let angleDegres = parseFloat(s.dataset.angle) || 0;
+            
+            let angleRadians = angleDegres * (Math.PI / 180);
+
+            let mouvementX = vitesse * Math.cos(angleRadians);
+            let mouvementY = vitesse * Math.sin(angleRadians);
+
+            let nouveauX = actuelX + mouvementX;
+            let nouveauY = actuelY + mouvementY;
+            
+            s.dataset.x = nouveauX;
+            s.dataset.y = nouveauY;
+
+            s.style.left = nouveauX + "px";
+            s.style.top = nouveauY + "px";
+
+
+            if (!EstEnCollisionSimple(s, scene)){
+                s.remove();
+            } else {
+                listePiquesStatique.forEach(o => {
+                    if (EstEnCollision(s, o)) {
+                        s.remove();
+                        o.remove();
+                    }
+                });
+                listeMeteorite.forEach(o => {
+                    if (EstEnCollision(s, o)) {
+                        s.remove();
+                    }
+                });
+            }
         });
     }
     if (ilFautOuvirLeMenuDeDefaite){
