@@ -80,7 +80,7 @@ window.addEventListener('keydown', (event) => {
     if (enJeu){
         const key = event.key;
     }
-    if (event.key == "e"){
+    if (event.key == "e" && enJeu){
         let laser = document.createElement("img");
         laser.src = "/image/kenney_space-shooter-remastered/PNG/Effects/fire01.png"
         laser.classList.add("laser");

@@ -90,6 +90,7 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 - niveauActuel+"_score"
 - niveauActuel+"_temps"
 - niveauActuel+"_tentative"
+- "musique" : Si c'est égal à 0, la musique est activée, si c'est égal à 1, la musique est désactivée.
 
 # Les éléments de l’environnement : 
 - Astéroïde fixe (difficulté facile).
@@ -109,7 +110,7 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 - Les pièces ont pour principe, si elles sont collectées, d’incrémenter le score.
 
 # Les contraintes techniques : 
-- Utilisation de HTML, CSS, JS, JSON.
+- Utilisation de HTML, CSS, JavaScript, JSON.
 - Responsivité du jeu pour permettre au joueur de jouer sur tout type de support.
 
 
