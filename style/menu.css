@@ -70,6 +70,7 @@ main{
 }
 
 .partie-de-credits{
+    transition:0.2s;
     margin-top: 30px;
     background-color: aliceblue;
     width: auto;
@@ -87,6 +88,11 @@ main{
 
 .partie-de-credits ul {
     margin-bottom: 0px;
+}
+
+.partie-de-credits:hover{
+    transition:0.2s;
+    background-color: rgb(234, 246, 255);
 }
 
 .iconeDuJeu{
@@ -145,7 +151,8 @@ footer p {
 
 #panel-livre-img{
     width: 100px;
-    height: 100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
 }
 
 #panel-livre-nom{
@@ -209,4 +216,22 @@ footer p {
     transition: 0.2s;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+}
+
+a{
+    transition: 0.2s;
+    font-size: 1rem;
+    color:blue;
+}
+
+a:hover{
+    transition: 0.2s;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:active{
+    color: rgb(175, 90, 255);
 }

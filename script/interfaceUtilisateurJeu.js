@@ -42,7 +42,6 @@ const PasserAuNiveauSuivant = () => {
         if (scoreMaximum <= 0) {
             nombreEtoile = 3;
         }
-        console.log(nombreEtoile+" "+score + " / "+ scoreMaximum);
         AugmanterSauvegarde(niveauActuel+"_pieces",score);
         const premierScore = LireLaSauvegarde(niveauActuel+"_score");
         SauvegarderLaPlusHauteValeur(niveauActuel+"_score",nombreEtoile);

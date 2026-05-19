@@ -35,6 +35,8 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 ├──┼──coup.wav                      # Musique de dégâ du jeu.
 ├──┼──sortie.wav                    # Musique si le joueur perd en sortant de la zone de jeu.
 ├──┼──fin.wav                       # Musique si le joueur gagne le niveau.
+├──┼──lancerLaser.wav               # Musique qui se joue quand un laser est lancer. 
+├──┼──laserToucherCible.wav         # Musique qui se joue quand un laser touche quelque chose. 
 ├──┴──pickupCoin.wav                # Musique jouer quand une pièce est récupéré.
 │
 ├─scenes

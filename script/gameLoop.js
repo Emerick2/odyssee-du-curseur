@@ -46,7 +46,9 @@ function gameLoop() {
             }
         });
 
+        let i = 0;
         listeDesLaser.forEach(s => {
+            i++;
             let vitesse = 5;
 
             if (!s.dataset.x) {
@@ -75,16 +77,28 @@ function gameLoop() {
 
             if (!EstEnCollisionSimple(s, scene)){
                 s.remove();
+                listeDesLaser.pop(i);
+                const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                musiqueDeFond.play();
             } else {
+                let j = 0;
                 listePiquesStatique.forEach(o => {
+                    j++;
                     if (EstEnCollision(s, o)) {
                         s.remove();
                         o.remove();
+                        listeDesLaser.pop(i);
+                        listeMeteorite.pop(j);
+                        const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                        musiqueDeFond.play();
                     }
                 });
                 listeMeteorite.forEach(o => {
                     if (EstEnCollision(s, o)) {
                         s.remove();
+                        listeDesLaser.pop(i);
+                        const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                        musiqueDeFond.play();
                     }
                 });
             }
@@ -102,4 +116,5 @@ function gameLoop() {
 
 
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();
+console.log("Information bonus : Vous avez réalisé "+LireLaSauvegarde(niveauActuel+"_tentative")+" tentatives.");
 CreeLeNiveau(niveauActuel, scene, Initialiser);
