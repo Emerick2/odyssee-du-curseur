@@ -43,8 +43,18 @@ const PasserAuNiveauSuivant = () => {
             nombreEtoile = 3;
         }
         AugmanterSauvegarde(niveauActuel+"_pieces",score);
+        const premierScore = LireLaSauvegarde(niveauActuel+"_score");
         SauvegarderLaPlusHauteValeur(niveauActuel+"_score",nombreEtoile);
-        SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
+        const nouveauScore = LireLaSauvegarde(niveauActuel+"_score");
+        if (premierScore != nouveauScore){
+            Sauvegarder(niveauActuel+"_temps",secondes)
+        } else if (nouveauScore == "3") {
+            SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
+        }
+
+        if (LireLaSauvegarde(niveauActuel+"_temps") == 0){
+            Sauvegarder(niveauActuel+"_temps",1)
+        }
 
         const panelVictoire = document.getElementById("panelDeFin");
         if (panelVictoire){

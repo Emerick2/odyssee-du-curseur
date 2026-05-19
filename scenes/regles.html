@@ -7,18 +7,22 @@
         <link rel="stylesheet" href="/style/jeu.css">
         <link rel="stylesheet" href="/style/menu.css">
         <link rel="stylesheet" href="/style/bouton.css">
+        <link rel="stylesheet" href="/style/regle.css">
         <script defer src="/script/outils.js"></script>
     </head>
     <body>
-        <h1 class="titre-partie">Les règles</h1>
-
+        <main>
+            <h1 class="titre-partie">Les règles</h1>
             <h2 class="titre-sous-partie">Le but du jeu est de se dirriger (à l'aide de la souris) à travers différents niveaux en évitant les obstacles et en collectant les pièces.</h2>
-        
-    <h2 class="titre-sous-partie">Il y a 5 niveaux de difficulté croissante, ainsi que 5 niveaux bonus.</h2>
-        
-    <h2 class="titre-sous-partie">Chaque niveau est chronométré, et le temps mis pour le terminer est converti en score (étoiles) le but étant d'obtenir le meilleur score possible.</h2>
-
-            <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/menu.html')">ACCUEIL</button>
-        </div>
+            <h2 class="titre-sous-partie">Il y a 11 niveaux de difficulté croissante.</h2>
+            <h2 class="titre-sous-partie">Chaque niveau est chronométré, et le nombre de pièces spatiale récupéré dans le niveau est converti en un score (étoiles) le but étant d'obtenir le meilleur score possible.</h2>
+            <h2 class="titre-sous-partie">Si vous jouer sur une ordinateur, un défi bonus s'offre à vous, celui de nettoyer l'espace ! Pour cela il faut appuyer sur "E".</h2>
+            <div id="liste-boutons">
+                <button class="boutonViolet" onclick="OuvrirUneNouvellePage('/scenes/menu.html')">ACCUEIL</button>
+            </div>
+        </main>
+        <footer>
+            <p>L’Odyssée du Curseur - 2026</p>
+        </footer>
     </body>
 </html>
