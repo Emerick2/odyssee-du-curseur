@@ -80,7 +80,7 @@ window.addEventListener('keydown', (event) => {
     if (enJeu){
         const key = event.key;
     }
-    if (event.key == "e"){
+    if (event.key == "e" && enJeu){
         let laser = document.createElement("img");
         laser.src = "/image/kenney_space-shooter-remastered/PNG/Effects/fire01.png"
         laser.classList.add("laser");
@@ -90,8 +90,11 @@ window.addEventListener('keydown', (event) => {
         
         laser.style.transform = `rotate(${playerRotation}deg)`;
         laser.dataset.angle = playerRotation-90;
-        const musiqueDeFond = new Audio("/musique/laserToucherCible.wav");
-        musiqueDeFond.play();
+        
+        if (musiqueAutoriser){
+            const musiqueDeFond = new Audio("/musique/laserToucherCible.wav");
+            musiqueDeFond.play();
+        }
         listeDesLaser.push(laser);
         document.body.append(laser);
     }

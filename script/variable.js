@@ -75,14 +75,16 @@ let audioFond = new Audio(musiqueDeFond);
 audioFond.volume = 0.8;
 
 const JouerSongCoup = (type = 0) => {
-    let nom = "coup.wav"
-    if  (type==1) {
-        nom = "sortie.wav"
-    } else if  (type==2) {
-        nom = "fin.wav"
+    if (musiqueAutoriser){
+        let nom = "coup.wav"
+        if  (type==1) {
+            nom = "sortie.wav"
+        } else if  (type==2) {
+            nom = "fin.wav"
+        }
+        const musiqueDeFond = new Audio("/musique/"+nom)
+        musiqueDeFond.play()
     }
-    const musiqueDeFond = new Audio("/musique/"+nom)
-    musiqueDeFond.play()
     OuvrirMenuDefaite();
 }
 

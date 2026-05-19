@@ -118,14 +118,24 @@ const ModifierStatusMusique = () => {
     musiqueAutoriser = !musiqueAutoriser;
     const boutonMusique = document.getElementById("boutonMusique");
     if (musiqueAutoriser){
+        Sauvegarder("musique",0);
         audioFond.play();
         if (boutonMusique){
             boutonMusique.classList.add("boutonMusiqueActif");
         }
     } else {
+        Sauvegarder("musique",1);
         audioFond.pause();
         if (boutonMusique){
             boutonMusique.classList.remove("boutonMusiqueActif");
         }
     }
+}
+
+if (LireLaSauvegarde("musique") == 1){
+    const boutonMusique = document.getElementById("boutonMusique");
+    if (boutonMusique){
+        boutonMusique.classList.remove("boutonMusiqueActif");
+    }
+    musiqueAutoriser = false;
 }

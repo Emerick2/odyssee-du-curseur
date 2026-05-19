@@ -235,3 +235,9 @@ footer p {
 .partie-de-credits a:active{
     color: rgb(175, 90, 255);
 }
+
+.sous-titre{
+    font-family: kenvector_future_thin;
+    font-size: 2rem;
+    text-align: center;
+}

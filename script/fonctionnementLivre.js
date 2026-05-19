@@ -7,7 +7,7 @@ const listeLivre = [
     {
         image : "/image/kenney_space-shooter-remastered/PNG/ufoYellow.png",
         nom : "Auberge-spatiale",
-        description : "L'espace est un milieux hostile pour les petit vaisseaux, c'est pourquoi, une gentils association à but non lucratif à disperser de nombreuses auberges spatiales pour aider les personnes dans le besoin !"
+        description : "L'espace est un milieu hostile pour les petit vaisseaux, c'est pourquoi, une gentils association à but non lucratif à disperser de nombreuses auberges spatiales pour aider les personnes dans le besoin !"
     },
     {
         image : "/image/kenney_space-shooter-remastered/PNG/playerShip1_blue.png",
@@ -16,7 +16,7 @@ const listeLivre = [
     },
     {
         image : "/image/kenney_space-shooter-remastered/PNG/Power-ups/powerupYellow_star.png",
-        nom : "Pièce spatial",
+        nom : "Pièce spatiale",
         description : "Les personnes riches aiment jeter l'argent par la fenêtre, par conséquent, on retrouve de l'argent partout dans l'espace ! Heureusement que cela ne cause pas de dégât à notre vaisseaux..."
     },
     {
