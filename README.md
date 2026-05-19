@@ -5,6 +5,11 @@ Pour rendre le jeu plus intéressant, le joueur aura également la possibilité 
 Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une page de sélection du niveau et un minimum de trois niveaux dont la difficulté sera croissante de niveau en niveau pour mettre au défi les joueurs qui souhaiteront essayer notre jeu.
 
 # Lancer le serveur :
+### Avec le serveur intégré
+- `npm install` : Installer les dépendances.
+- `npm run dev` : Démarrer le serveur. 
+- Aller sur : http://localhost:8080/scenes/menu.html
+
 ### Avec JavaScript
 - `npx http-server`
 - Aller sur l'un des liens indiqués dans le terminal.
@@ -12,6 +17,7 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 ### Avec Python
 - `python -m http.server 8080 --bind 0.0.0.0`
 - Aller sur : http://localhost:8080/scenes/menu.html
+
 
 # Structure du projet :
 ```
@@ -81,7 +87,17 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 ├──┼──panelDeFin.css                # Style du panneau de fin de partie qui apparais à chaque fois que le joueur fini un niveau.
 ├──┼──regle.css                     # Style de la page des règles.
 └──┴──police.css                    # Les polices d'écriture du jeu.
-
+│
+├─serveur
+├──┬──db
+├──┼─────scoresDb.js                # Éditer les scores du jeux.
+├──┼──middleware
+├──┼─────errorHandler.js            # Méthode d'erreur du serveur.
+├──┼──routes
+├──┼──┬──home.js                    # Les différentes  routes du serveurs.
+├──┼──┴──scores.js                  # Les routes du serveurs en lien avec le score.
+├──┼──app.js                        # Initialisation de l'application.
+├──┴──serveur.js                    # Ouverture du serveur sur le port choisie.
 ```
 
 
