@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Niveau 10 | L'odyssée du Curseur</title>
+    <link rel="stylesheet" href="/style/menu.css" />
+    <link rel="stylesheet" href="/style/jeu.css" />
+    <link rel="stylesheet" href="/style/barreDeNavigation.css" />
+    <link rel="stylesheet" href="/style/panelDeFin.css" />
+    <link rel="stylesheet" href="/style/bouton.css" />
+    <script defer src="/script/variable.js"></script>
+    <script defer src="/script/outils.js"></script>
+    <script defer src="/script/timer.js"></script>
+    <script defer src="/script/spike.js"></script>
+    <script defer src="/script/score.js"></script>
+    <script defer src="/script/creeNiveau.js"></script>
+    <script defer src="/script/mouvementJoueur.js"></script>
+    <script defer src="/script/interfaceUtilisateurJeu.js"></script>
+    <script defer src="/script/gameLoop.js"></script>
+  </head>
+  <body>
+    <div id="top"></div>
+    <div id="fondPerdu">
+      <div class="scenneDuJeuDimansion">
+        <button
+          id="boutonMaison"
+          onclick="OuvrirUneNouvellePage('/scenes/menu.html')"
+        >
+          🏠
+        </button>
+        <button id="boutonJouer" onclick="Rejouer()">Jouer</button>
+      </div>
+    </div>
+    <button
+      onclick="ModifierStatusMusique()"
+      id="boutonMusique"
+      class="boutonMusiqueActif"
+    >
+      ♫
+    </button>
+    <div id="chronometrePanel">00:00</div>
+    <h1>L'Odyssée du Curseur</h1>
+    <div id="scenneDuJeu"></div>
+    <img
+      id="joueur"
+      src="/image/kenney_space-shooter-remastered/PNG/playerShip1_blue.png"
+      alt="joueur"
+    />
+
+    <div id="panelDeFin" style="display: none">
+      <h1 class="nomNiveau">Niveau 10</h1>
+      <div class="div-imageEtoile">
+        <img
+          class="imageEtoile"
+          id="imageEtoile1"
+          alt="image de l'étoile N°1"
+          src="/image/kenney_space-shooter-remastered/PNG/Power-ups/star_gold.png"
+        />
+        <img
+          class="imageEtoile"
+          id="imageEtoile2"
+          alt="image de l'étoile N°2"
+          src="/image/kenney_space-shooter-remastered/PNG/Power-ups/star_gold.png"
+        />
+        <img
+          class="imageEtoile"
+          id="imageEtoile3"
+          alt="image de l'étoile N°3"
+          src="/image/kenney_space-shooter-remastered/PNG/Power-ups/star_gold.png"
+        />
+      </div>
+      <div id="liste-boutons">
+        <button
+          id="boutonNiveauSuivant"
+          class="boutonViolet"
+          onclick="OuvrirUneNouvellePage('/scenes/choix-niveau.html')"
+        >
+          CONTINUER
+        </button>
+        <button
+          class="boutonViolet"
+          onclick="OuvrirUneNouvellePage('/scenes/menu.html')"
+        >
+          ACCUEIL
+        </button>
+        <button
+          class="boutonViolet"
+          onclick="OuvrirUneNouvellePage('/scenes/credits.html')"
+        >
+          CRÉDITS
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

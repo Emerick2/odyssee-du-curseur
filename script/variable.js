@@ -9,8 +9,10 @@ const timerElement = document.getElementById("timer");
 const scene = document.getElementById("scenneDuJeu");
 
 const joueur = document.getElementById("joueur");
-let mur = Array.from(document.querySelectorAll('.meteorite'));
-let listePiqueStatique = Array.from(document.querySelectorAll(".piqueStatique"));
+let mur = Array.from(document.querySelectorAll(".meteorite"));
+let listePiqueStatique = Array.from(
+  document.querySelectorAll(".piqueStatique"),
+);
 let gagnerElement = document.getElementById("gagner");
 const panelFin = document.getElementById("fondPerdu");
 const boutonRejouer = document.getElementById("boutonJouer");
@@ -25,29 +27,27 @@ let audioUnlocked = false;
 const departMinutes = 1;
 let temps = departMinutes * 60;
 
-
 // outils :
-const nombreDeNiveauTotal = 5;
+const nombreDeNiveauTotal = 10;
 let positionDeDepart = {
-    x : 0,
-    y : 0,
-}
+  x: 0,
+  y: 0,
+};
 
 const lesTaille = {
-    "meteorite":100,
-    "gagner":70,
-    "coin":20,
-    "spike":20,
-    "piqueStatique":30
-}
+  meteorite: 100,
+  gagner: 70,
+  coin: 20,
+  spike: 20,
+  piqueStatique: 30,
+};
 
 const autoriserLeScorll = false;
 
-
 // mouvement du joueur :
 
-if (scene == null || joueur == null){
-    console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
+if (scene == null || joueur == null) {
+  console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
 }
 
 // spickes :
@@ -69,13 +69,13 @@ let audioFond = new Audio(musiqueDeFond);
 audioFond.volume = 0.8;
 
 const JouerSongCoup = (type = 0) => {
-    let nom = "coup.wav"
-    if  (type==1) {
-        nom = "sortie.wav"
-    } else if  (type==2) {
-        nom = "fin.wav"
-    }
-    const musiqueDeFond = new Audio("/musique/"+nom)
-    musiqueDeFond.play()
-    OuvrirMenuDefaite();
-}
+  let nom = "coup.wav";
+  if (type == 1) {
+    nom = "sortie.wav";
+  } else if (type == 2) {
+    nom = "fin.wav";
+  }
+  const musiqueDeFond = new Audio("/musique/" + nom);
+  musiqueDeFond.play();
+  OuvrirMenuDefaite();
+};

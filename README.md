@@ -3,7 +3,7 @@
 L’Odyssée du Curseur est un jeu dans un thème spatial. Le joueur contrôle un vaisseau et a pour objectif d’éviter les divers astéroïdes, piques et autres vaisseaux spatiaux qui se trouveront sur son chemin vers la porte du niveau suivant.
 Le joueur contrôle son vaisseau à la souris et le principe est de progresser entre les différents obstacles dans le but d’arriver à la fin sans toucher les murs. Si le joueur touche un obstacle, il doit recommencer le niveau.
 Pour rendre le jeu plus intéressant, le joueur aura également la possibilité de collecter diverses pièces présentes dans les niveaux, l’incitant ainsi à prendre des passages plus risqués pour finir entièrement le jeu.
-Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une page de sélection du niveau et un minimum de trois niveaux dont la difficulté sera croissante de niveau en niveau pour mettre au défi les joueurs qui shouaiteront essayer notre jeu.
+Le jeu contient **10 niveaux** avec une difficulté croissante. Chaque niveau propose des obstacles de plus en plus nombreux et complexes pour mettre au défi les joueurs.
 
 # Lancer le serveur :
 
@@ -58,6 +58,11 @@ server/
 ├──┼──3.json                        # Données de positionnements des éléments du niveau 3.
 ├──┼──4.json                        # Données de positionnements des éléments du niveau 4.
 ├──┼──5.json                        # Données de positionnements des éléments du niveau 5.
+├──┼──6.json                        # Données de positionnements des éléments du niveau 6.
+├──┼──7.json                        # Données de positionnements des éléments du niveau 7.
+├──┼──8.json                        # Données de positionnements des éléments du niveau 8.
+├──┼──9.json                        # Données de positionnements des éléments du niveau 9.
+├──┼──10.json                       # Données de positionnements des éléments du niveau 10.
 ├──┴──exemple.json                  # Exemple de ce que l'on peut écrire dans les .json.
 │
 ├─image                             # Dossier contenant les images du jeu.
@@ -75,7 +80,12 @@ server/
 ├──┼──┼──2.html                     # Page internet du niveau 2 du jeu.
 ├──┼──┼──3.html                     # Page internet du niveau 3 du jeu.
 ├──┼──┼──4.html                     # Page internet du niveau 4 du jeu.
-├──┼──┴──5.html                     # Page internet du niveau 5 du jeu.
+├──┼──┼──5.html                     # Page internet du niveau 5 du jeu.
+├──┼──┼──6.html                     # Page internet du niveau 6 du jeu.
+├──┼──┼──7.html                     # Page internet du niveau 7 du jeu.
+├──┼──┼──8.html                     # Page internet du niveau 8 du jeu.
+├──┼──┼──9.html                     # Page internet du niveau 9 du jeu.
+├──┼──┴──10.html                    # Page internet du niveau 10 du jeu.
 ├──┼──choix-niveau.html             # Page permettant au joueur de choisir son niveau et de voir les statistiques.
 ├──┼──credits.html                  # Page permettant de voir les crédits du jeu.
 ├──┴──menu.html                     # Page d'accueil du jeu.
