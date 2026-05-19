@@ -43,8 +43,18 @@ const PasserAuNiveauSuivant = () => {
             nombreEtoile = 3;
         }
         AugmanterSauvegarde(niveauActuel+"_pieces",score);
+        const premierScore = LireLaSauvegarde(niveauActuel+"_score");
         SauvegarderLaPlusHauteValeur(niveauActuel+"_score",nombreEtoile);
-        SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
+        const nouveauScore = LireLaSauvegarde(niveauActuel+"_score");
+        if (premierScore != nouveauScore){
+            Sauvegarder(niveauActuel+"_temps",secondes)
+        } else if (nouveauScore == "3") {
+            SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
+        }
+
+        if (LireLaSauvegarde(niveauActuel+"_temps") == 0){
+            Sauvegarder(niveauActuel+"_temps",1)
+        }
 
         const panelVictoire = document.getElementById("panelDeFin");
         if (panelVictoire){
@@ -108,14 +118,24 @@ const ModifierStatusMusique = () => {
     musiqueAutoriser = !musiqueAutoriser;
     const boutonMusique = document.getElementById("boutonMusique");
     if (musiqueAutoriser){
+        Sauvegarder("musique",0);
         audioFond.play();
         if (boutonMusique){
             boutonMusique.classList.add("boutonMusiqueActif");
         }
     } else {
+        Sauvegarder("musique",1);
         audioFond.pause();
         if (boutonMusique){
             boutonMusique.classList.remove("boutonMusiqueActif");
         }
     }
+}
+
+if (LireLaSauvegarde("musique") == 1){
+    const boutonMusique = document.getElementById("boutonMusique");
+    if (boutonMusique){
+        boutonMusique.classList.remove("boutonMusiqueActif");
+    }
+    musiqueAutoriser = false;
 }

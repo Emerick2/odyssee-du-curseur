@@ -27,7 +27,7 @@ let temps = departMinutes * 60;
 
 
 // outils :
-const nombreDeNiveauTotal = 5;
+const nombreDeNiveauTotal = 11;
 let positionDeDepart = {
     x : 0,
     y : 0,
@@ -50,6 +50,12 @@ if (scene == null || joueur == null){
     console.error("Le joueur ou la scène du jeu n'est pas dans la scène !");
 }
 
+let xPlayer = 0;
+let yPlayer = 0;
+
+let playerRotation = 0;
+const listeDesLaser = [];
+
 // spickes :
 let spikes = document.querySelectorAll(".spike");
 const spikeSpeed = 0.5;
@@ -69,13 +75,18 @@ let audioFond = new Audio(musiqueDeFond);
 audioFond.volume = 0.8;
 
 const JouerSongCoup = (type = 0) => {
-    let nom = "coup.wav"
-    if  (type==1) {
-        nom = "sortie.wav"
-    } else if  (type==2) {
-        nom = "fin.wav"
+    if (musiqueAutoriser){
+        let nom = "coup.wav"
+        if  (type==1) {
+            nom = "sortie.wav"
+        } else if  (type==2) {
+            nom = "fin.wav"
+        }
+        const musiqueDeFond = new Audio("/musique/"+nom)
+        musiqueDeFond.play()
     }
-    const musiqueDeFond = new Audio("/musique/"+nom)
-    musiqueDeFond.play()
     OuvrirMenuDefaite();
 }
+
+const listePiquesStatique = []
+const listeMeteorite = []

@@ -45,6 +45,74 @@ function gameLoop() {
                 JouerSongCoup(0);
             }
         });
+
+        let i = 0;
+        listeDesLaser.forEach(s => {
+            let vitesse = 5;
+            
+            if (!s.dataset.x) {
+                s.dataset.x = parseFloat(s.style.left) || 0;
+                s.dataset.y = parseFloat(s.style.top) || 0;
+            }
+            
+            let actuelX = parseFloat(s.dataset.x);
+            let actuelY = parseFloat(s.dataset.y);
+            let angleDegres = parseFloat(s.dataset.angle) || 0;
+            
+            let angleRadians = angleDegres * (Math.PI / 180);
+            
+            let mouvementX = vitesse * Math.cos(angleRadians);
+            let mouvementY = vitesse * Math.sin(angleRadians);
+            
+            let nouveauX = actuelX + mouvementX;
+            let nouveauY = actuelY + mouvementY;
+            
+            s.dataset.x = nouveauX;
+            s.dataset.y = nouveauY;
+            
+            s.style.left = nouveauX + "px";
+            s.style.top = nouveauY + "px";
+            
+            
+            let stop = false;
+            if (!stop && !EstEnCollisionSimple(s, scene)){
+                stop = true;
+                s.remove();
+                listeDesLaser.pop(i);
+                if (musiqueAutoriser){
+                    const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                    musiqueDeFond.play();
+                }
+            } else if (!stop) {
+                let j = 0;
+                listePiquesStatique.forEach(o => {
+                    if (!stop && EstEnCollision(s, o)) {
+                        stop = true;
+                        s.remove();
+                        o.remove();
+                        listeDesLaser.pop(i);
+                        listeMeteorite.pop(j);
+                        if (musiqueAutoriser){
+                            const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                            musiqueDeFond.play();
+                        }
+                    }
+                    j++;
+                });
+                listeMeteorite.forEach(o => {
+                    if (!stop && EstEnCollision(s, o)) {
+                        stop = true;
+                        s.remove();
+                        listeDesLaser.shift(i);
+                        if (musiqueAutoriser){
+                            const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                            musiqueDeFond.play();
+                        }
+                    }
+                });
+            }
+            i++;
+        });
     }
     if (ilFautOuvirLeMenuDeDefaite){
         secondes = 0;
@@ -58,4 +126,5 @@ function gameLoop() {
 
 
 let niveauActuel = TrouverLeNumeroDuNiveauActuel();
+console.log("Information bonus : Vous avez réalisé "+LireLaSauvegarde(niveauActuel+"_tentative")+" tentatives.");
 CreeLeNiveau(niveauActuel, scene, Initialiser);

@@ -70,6 +70,7 @@ main{
 }
 
 .partie-de-credits{
+    transition:0.2s;
     margin-top: 30px;
     background-color: aliceblue;
     width: auto;
@@ -87,6 +88,11 @@ main{
 
 .partie-de-credits ul {
     margin-bottom: 0px;
+}
+
+.partie-de-credits:hover{
+    transition:0.2s;
+    background-color: rgb(234, 246, 255);
 }
 
 .iconeDuJeu{
@@ -129,4 +135,109 @@ footer{
 footer p {
     font-size: 1.3;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel-livre{
+    position: relative;
+    border: solid 2px;
+    margin-bottom: 50px;
+    padding: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    max-width: 500px;
+    height: 300px;
+    background-color: rgb(255, 242, 226);
+}
+
+#panel-livre-img{
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+#panel-livre-nom{
+    position: absolute;
+    top:30px;
+    left:170px;
+    font-size: 1.5rem;
+}
+
+#panel-livre-description{
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.panel-livre-btn{
+    transition: 0.2s;
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    top:0;
+    border: solid 0px;
+    cursor: pointer;
+    background-color: beige;
+    user-select: none;
+    font-family: kenvector_future_thin;
+    font-size: 25px;
+}
+
+.panel-livre-btn:hover{
+    transition: 0.2s;
+    width: 45px;
+    background-color: rgb(253, 223, 255);
+}
+
+.panel-livre-btn:active{
+    transition: 0.2s;
+    background-color: rgb(235, 200, 237);
+}
+
+#panel-livre-btn-1{
+    left:0;
+    border-right-width: 2px;
+}
+
+#panel-livre-btn-1:hover{
+    transition: 0.2s;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#panel-livre-btn-2{
+    right:0;
+    border-left-width: 2px;
+}
+
+#panel-livre-btn-2:hover{
+    transition: 0.2s;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.partie-de-credits a{
+    transition: 0.2s;
+    font-size: 1rem;
+    color:blue;
+}
+
+.partie-de-credits a:hover{
+    transition: 0.2s;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.partie-de-credits a:active{
+    color: rgb(175, 90, 255);
+}
+
+.sous-titre{
+    font-family: kenvector_future_thin;
+    font-size: 2rem;
+    text-align: center;
 }

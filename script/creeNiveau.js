@@ -1,10 +1,25 @@
 const CreeLeNiveau = async(id, scene, fonctionAAppeller) => {
+    const tempsNiveauActuel = LireLaSauvegarde(id+"_temps");
+    const tempsNiveauPrecedant = LireLaSauvegarde((id-1)+"_temps");
+    if (id !== 1 && tempsNiveauActuel === 0 && tempsNiveauPrecedant === 0){
+        console.log("Se niveau n'est pas encore débloqué !");
+        OuvrirUneNouvellePage("/scenes/choix-niveau.html");
+    }
+
     const fichier = "/data/"+id+".json";
     const reponse = await fetch(fichier);
     if (!reponse.ok){
         throw new Error("Fichier non trouvé");
         OuvrirUneNouvellePage("/scenes/menu.html");
     }
+    scene.innerHTML = "";
+    scoreMaximum = 0;
+    score = 0;
+    listePiquesStatique.splice();
+    listeMeteorite.splice();
+    spikePositions.splice();
+    listeDesLaser.splice();
+    coins.splice();
     const donnees = await reponse.json();
 
     if (donnees["depart"] != null) {
@@ -43,6 +58,10 @@ const ListePlacerElement = (donnees, scene, recherche, src) => {
                     objet.x = elem[0];
                     objet.y = elem[1];
                     spikePositions.push(objet);
+                } else if (recherche == "piqueStatique") {
+                    listePiquesStatique.push(nouvelObjet);
+                } else if (recherche == "meteorite") {
+                    listeMeteorite.push(nouvelObjet);
                 }
             }
         }
