@@ -4,7 +4,9 @@ document.addEventListener("click", () => {
 
 function playCoinSound() {
     if (!audioUnlocked) return;
-    const sound = new Audio("/musique/pickupCoin.wav");
-    sound.play();
+    if (musiqueAutoriser){
+        const sound = new Audio("/musique/pickupCoin.wav");
+        sound.play();
+    }
 }
 

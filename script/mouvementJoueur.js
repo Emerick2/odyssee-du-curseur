@@ -90,8 +90,11 @@ window.addEventListener('keydown', (event) => {
         
         laser.style.transform = `rotate(${playerRotation}deg)`;
         laser.dataset.angle = playerRotation-90;
-        const musiqueDeFond = new Audio("/musique/laserToucherCible.wav");
-        musiqueDeFond.play();
+        
+        if (musiqueAutoriser){
+            const musiqueDeFond = new Audio("/musique/laserToucherCible.wav");
+            musiqueDeFond.play();
+        }
         listeDesLaser.push(laser);
         document.body.append(laser);
     }

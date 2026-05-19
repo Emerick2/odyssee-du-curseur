@@ -78,8 +78,10 @@ function gameLoop() {
             if (!EstEnCollisionSimple(s, scene)){
                 s.remove();
                 listeDesLaser.pop(i);
-                const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
-                musiqueDeFond.play();
+                if (musiqueAutoriser){
+                    const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                    musiqueDeFond.play();
+                }
             } else {
                 let j = 0;
                 listePiquesStatique.forEach(o => {
@@ -89,16 +91,20 @@ function gameLoop() {
                         o.remove();
                         listeDesLaser.pop(i);
                         listeMeteorite.pop(j);
-                        const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
-                        musiqueDeFond.play();
+                        if (musiqueAutoriser){
+                            const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                            musiqueDeFond.play();
+                        }
                     }
                 });
                 listeMeteorite.forEach(o => {
                     if (EstEnCollision(s, o)) {
                         s.remove();
                         listeDesLaser.pop(i);
-                        const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
-                        musiqueDeFond.play();
+                        if (musiqueAutoriser){
+                            const musiqueDeFond = new Audio("/musique/lancerLaser.wav");
+                            musiqueDeFond.play();
+                        }
                     }
                 });
             }
