@@ -6,6 +6,13 @@ const CreeLeNiveau = async(id, scene, fonctionAAppeller) => {
         OuvrirUneNouvellePage("/scenes/menu.html");
     }
     scene.innerHTML = "";
+    scoreMaximum = 0;
+    score = 0;
+    listePiquesStatique.splice();
+    listeMeteorite.splice();
+    spikePositions.splice();
+    listeDesLaser.splice();
+    coins.splice();
     const donnees = await reponse.json();
 
     if (donnees["depart"] != null) {
