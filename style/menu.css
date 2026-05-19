@@ -218,13 +218,13 @@ footer p {
     border-bottom-left-radius: 20px;
 }
 
-a{
+.partie-de-credits a{
     transition: 0.2s;
     font-size: 1rem;
     color:blue;
 }
 
-a:hover{
+.partie-de-credits a:hover{
     transition: 0.2s;
     font-size: 1.3rem;
     font-weight: bold;
@@ -232,6 +232,6 @@ a:hover{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a:active{
+.partie-de-credits a:active{
     color: rgb(175, 90, 255);
 }

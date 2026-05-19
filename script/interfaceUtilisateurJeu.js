@@ -52,6 +52,9 @@ const PasserAuNiveauSuivant = () => {
             SauvegarderLaPlusBasseValeur(niveauActuel+"_temps",secondes);
         }
 
+        if (LireLaSauvegarde(niveauActuel+"_temps") == 0){
+            Sauvegarder(niveauActuel+"_temps",1)
+        }
 
         const panelVictoire = document.getElementById("panelDeFin");
         if (panelVictoire){

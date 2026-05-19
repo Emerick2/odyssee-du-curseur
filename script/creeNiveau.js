@@ -1,8 +1,8 @@
 const CreeLeNiveau = async(id, scene, fonctionAAppeller) => {
-    const tempsNiveauActuel = LireLaSauvegarde(id+"_score");
-    const tempsNiveauPrecedant = LireLaSauvegarde((id-1)+"_score");
-    if (id != 1 && tempsNiveauActuel == 0 && tempsNiveauPrecedant == 0){
-        console.log("Se niveau n'est pas encore débloquer !");
+    const tempsNiveauActuel = LireLaSauvegarde(id+"_temps");
+    const tempsNiveauPrecedant = LireLaSauvegarde((id-1)+"_temps");
+    if (id !== 1 && tempsNiveauActuel === 0 && tempsNiveauPrecedant === 0){
+        console.log("Se niveau n'est pas encore débloqué !");
         OuvrirUneNouvellePage("/scenes/choix-niveau.html");
     }
 
