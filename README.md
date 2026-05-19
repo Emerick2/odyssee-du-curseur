@@ -85,7 +85,7 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 ```
 
 
-# Les données de sauvegardes conserver en local :
+# Les données de sauvegardes conservées en local :
 - niveauActuel+"_pieces"
 - niveauActuel+"_score"
 - niveauActuel+"_temps"
@@ -121,11 +121,11 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 
 # Crédits :
 ### Développeurs du jeu
-- Emerick
-- Gabor
-- Jules
+- Émerick PACAUD
+- Gabor LIGNIER
+- Jules NEVEU
 
-### Ressources visuels
+### Ressources visuelles
 - kenney.nl
 - ikbest.com
 
