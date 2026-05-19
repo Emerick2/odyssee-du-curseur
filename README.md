@@ -20,8 +20,13 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 
 
 # Structure du projet :
+
 ```
-┌─data                              
+├─package.json                       # Dépendances et scripts npm
+├─.env                               # Variables d'environnement (PORT=8080)
+├─.gitignore                         # Fichiers ignorés par Git
+│
+├─data
 ├──┬──1.json                        # Données de positionnements des éléments du niveau 1.
 ├──┼──2.json                        # Données de positionnements des éléments du niveau 2.
 ├──┼──3.json                        # Données de positionnements des éléments du niveau 3.
@@ -47,7 +52,7 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 ├──┴──pickupCoin.wav                # Musique jouer quand une pièce est récupéré.
 │
 ├─scenes
-├──┬──niveau                        
+├──┬──niveau
 ├──┼──┬──1.html                     # Page internet du niveau 1 du jeu.
 ├──┼──┼──2.html                     # Page internet du niveau 2 du jeu.
 ├──┼──┼──3.html                     # Page internet du niveau 3 du jeu.
@@ -71,7 +76,7 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 ├──┼──gameLoop.js                   # boucle du jeu pour déclencher les détection des piques notamment.
 ├──┼──interfaceUtilisateurJeu.js    # Les boutons de l'interface utilisateur sur les pages de niveaux.
 ├──┼──mouvementJoueur.js            # Script qui permet de faire le déplacement du joueur dans l'espace.
-├──┼──outils.js                     # Script qui contient plusieurs fonctions utilitaire utile dans les différentes page du site comme la détection de collision et le changement de page notamment.
+├──┼──outils.js                     # Script qui contient plusieurs fonctions utilitaire utile dans les différentes page du site.
 ├──┼──score.js                      # Gestion des pièces du jeu.
 ├──┼──spike.js                      # Gestion des piques dynamique du jeu.
 ├──┼──fonctionnementLivre.js        # Script qui permet la navigation dans le livre sur la page d'accueil.
@@ -108,19 +113,27 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 - niveauActuel+"_tentative"
 - "musique" : Si c'est égal à 0, la musique est activée, si c'est égal à 1, la musique est désactivée.
 
-# Les éléments de l’environnement : 
+- niveauActuel+"\_pieces"
+- niveauActuel+"\_score"
+- niveauActuel+"\_temps"
+- niveauActuel+"\_tentative"
+
+# Les éléments de l’environnement :
+
 - Astéroïde fixe (difficulté facile).
 - Pique statique (difficulté moyenne).
 - Pique qui tombe et réapparaît (difficulté difficile).
 - Porte de fin.
 - Pièce à collecter.
 
-# Les actions que le personnage peut effectuer : 
+# Les actions que le personnage peut effectuer :
+
 - Le joueur peut se déplacer en suivant les actions de la souris du joueur.
 - Le personnage peut perdre s’il touche un mur, dans quel cas, il revient au début du jeu.
 - Le personnage peut passer au niveau suivant ou au crédit de fin s’il touche la porte de fin.
 
-# Les interactions : 
+# Les interactions :
+
 - Les piques et les murs font perdre le joueur.
 - La porte de fin fait remporter la partie et permet de réaliser le niveau suivant.
 - Les pièces ont pour principe, si elles sont collectées, d’incrémenter le score.
@@ -129,14 +142,13 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 - Utilisation de HTML, CSS, JavaScript, JSON.
 - Responsivité du jeu pour permettre au joueur de jouer sur tout type de support.
 
-
 # Pour l'organisation du projet :
+
 - Utilisation du logiciel **Trello** pour nous répartir nos taches.
 - Utilisation de **GitHub** pour mettre en commun nos programmes.
 
-
-
 # Crédits :
+
 ### Développeurs du jeu
 - Émerick PACAUD
 - Gabor LIGNIER
@@ -147,5 +159,6 @@ Notre objectif est d’avoir un jeu avec un menu, une scène de crédit, une pag
 - ikbest.com
 
 ### Ressources sonores
+
 - sfxr.me
 - pixabay.com
